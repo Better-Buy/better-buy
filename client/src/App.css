@@ -1,5 +1,53 @@
+@font-face {
+  font-family: 'Now Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Regular'), url('./assets/fonts/Now-Regular.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Now Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Thin'), url('./assets/fonts/Now-Thin.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Now Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Light'), url('./assets/fonts/Now-Light.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Now Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Medium'), url('./assets/fonts/Now-Medium.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Now Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Bold'), url('./assets/fonts/Now-Bold.woff') format('woff');
+  }
+  
+
+  @font-face {
+  font-family: 'Now Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Now Black'), url('./assets/fonts/Now-Black.woff') format('woff');
+  }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'now regular', sans-serif;
 }
