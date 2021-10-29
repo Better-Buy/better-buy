@@ -1,5 +1,5 @@
 import React from 'react';
-import './MainHeader.css'
+import './Navbar.css'
 import { Grid } from '@mui/material'
 import Logo from '../assets/img/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,9 +9,9 @@ const shoppingCart = <FontAwesomeIcon icon={faShoppingCart} />
 
 export default function Navbar() {
   return (
-    <Grid container className="mainHeader" JjustifyContent="space-between" direction="row" alignItems="Center">
+    <Grid container className="navbar" JjustifyContent="space-between" direction="row" alignItems="Center">
 
-      <Grid container item xs={12} sm={6} md={6} lg={6} justifyContent="flex-start" alignItems="Center">
+      <Grid container className="logo-container" item xs={12} sm={6} md={6} lg={6} justifyContent="flex-start" alignItems="Center">
         <Grid item><img className="logo" src={Logo} alt="Brand Logo"></img></Grid>
         <Grid item className="logo-text">etter Buy</Grid> 
       </Grid>
