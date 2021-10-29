@@ -1,0 +1,38 @@
+/*Type-Scale.com minor third 16px base
+2.986rem/47.78px
+2.488rem/39.81px
+2.074rem/33.18px
+1.728rem/27.65px
+1.44rem/23.04px
+1.2rem/19.20px
+1rem/16.00px
+0.833rem/13.33px
+0.694rem/11.11px
+0.579rem/9.26px*/
+
+.mainHeader {
+    background-color: var(--tertiary);
+}
+
+.logo {
+    width: 47.78px;
+    padding-top: 1vh;
+    padding-left: 0.5vw;
+}
+
+.logo-text {
+    font-size: 39.81px;
+    color: var(--primary);
+}
+
+.slogan {
+    font-family: 'aileronbold';
+    font-size: 27.65px;
+    padding-left: 2vw;
+    color: #0076B5;
+}
+
+.navlinks {
+    color: black;
+    padding-right: 3vw;
+}

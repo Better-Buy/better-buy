@@ -1,3 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'now bold', sans-serif;
+}
+
+:root {
+  --primary: #0b3278;
+  --secondary: #9bb0d2;
+  --tertiary: #f2f5ff;
+}
+
 @font-face {
   font-family: 'Now Regular';
   font-style: normal;
@@ -45,9 +58,17 @@
   src: local('Now Black'), url('./assets/fonts/Now-Black.woff') format('woff');
   }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'now regular', sans-serif;
+  @font-face {
+    font-family: 'aileronregular';
+    src: url('./assets/fonts/Aileron-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'aileronbold';
+  src: url('./assets/fonts/Aileron-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
