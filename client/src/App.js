@@ -16,9 +16,10 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Login from './components/pages/Login';
 import Product from './components/pages/Product';
-import Signup from './components/pages/Signup';
+// import Signup from './components/pages/Signup';
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
+import Register from './components/auth/Register';
 
 import AuthState from './context/auth/authState';
 
@@ -60,7 +61,7 @@ function App() {
               <Route exact path='/' component={Home} />
               <Route exact path='/Product' component={Product} />
               <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={Signup} />
+              <Route exact path='/register' component={Register} />
               <Route exact path='/about' component={About} />
             </Switch>
           </div>
