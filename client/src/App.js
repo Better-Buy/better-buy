@@ -1,5 +1,15 @@
 import React, {Fragment} from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar'
+
+// function App() {
+//   return (
+//     <div className="App">
+//     <Navbar />
+//     <SearchBar />
+//     </div>
+=======
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
