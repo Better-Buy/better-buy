@@ -7,9 +7,9 @@ import TextField from '@mui/material/TextField';
 
 export default function SearchBar() {
     return (
-      <Grid container className="search-bar" JjustifyContent="space-around" direction="row" alignItems="Center">
+      <Grid container className="search-bar"  JjustifyContent="space-around" direction="row" alignItems="Center">
          
-          <Grid className="category-container" container item sm={12} md={9} lg={9} spacing={3}>
+          <Grid className="category-container" container item sm={12} md={9} lg={9} spacing={6}>
           <Grid item>Laptops</Grid>
             <Grid item>TVs</Grid>
             <Grid item>Cameras</Grid>

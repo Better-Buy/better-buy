@@ -29,13 +29,6 @@
     color: var(--primary);
 }
 
-.slogan {
-    font-family: 'aileronbold';
-    font-size: 27.65px;
-    padding-left: 2vw;
-    color: #0076B5;
-}
-
 .navlinks {
     color: black;
     padding-right: 3vw;
