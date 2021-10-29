@@ -8,22 +8,26 @@ import Login from './components/pages/Login';
 import Product from './components/pages/Product';
 import Signup from './components/pages/Signup';
 
+import AuthState from './context/auth/authState';
+
 function App() {
   return (
-    <Router>
-      <Fragment className="App">
-        <Navbar />
-        <div className='conainter'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/Product' component={Product} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/about' component={About} />
-          </Switch>
-        </div>
-      </Fragment>
-    </Router>
+    <AuthState>
+      <Router>
+        <Fragment className="App">
+          <Navbar />
+          <div className='conainter'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/Product' component={Product} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/signup' component={Signup} />
+              <Route exact path='/about' component={About} />
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
+    </AuthState>
   );
 }
 
