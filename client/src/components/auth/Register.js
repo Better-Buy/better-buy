@@ -8,10 +8,7 @@ const Register = (props) => {
 
     useEffect(() => {
 
-        if(isAuthenticated) {
-            props.history.push('/');
-        }
-    
+        // the following error message need to match server
         if (error === 'User exists') {
         //   setAlert(error, 'danger');
             console.log('user already defined');
@@ -19,8 +16,7 @@ const Register = (props) => {
         }
         // eslint-disable-next-line
       }, [error, isAuthenticated, props.history]);
-    //    }, [error]);
-
+      
     const [user, setUser] = useState({
         name: '',
         email: '',
