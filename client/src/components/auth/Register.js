@@ -7,14 +7,16 @@ const Register = () => {
     const { register, error, clearErrors } = authContext;
 
     useEffect(() => {
-    
+
+        // the following error message need to match server
         if (error === 'User exists') {
         //   setAlert(error, 'danger');
             console.log('user already defined');
           clearErrors();
         }
-    //   }, [error, isAuthenticated, props.history]);
-       }, [error]);
+        // eslint-disable-next-line
+      }, [error, isAuthenticated, props.history]);
+
 
     const [user, setUser] = useState({
         name: '',
