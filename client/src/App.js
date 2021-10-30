@@ -12,6 +12,7 @@ import './App.css';
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/layout/Navbar';
+import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 // import Login from './components/pages/Login';
@@ -57,6 +58,7 @@ function App() {
       <Router>
         <Fragment className="App">
           <Navbar />
+          <SearchBar />
           <div className='conainter'>
             <Switch>
               <Route exact path='/' component={Home} />
