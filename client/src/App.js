@@ -25,6 +25,9 @@ import Login from './components/auth/Login';
 
 import AuthState from './context/auth/authState';
 
+//Amir  token
+import setAuthToken from './utils/setAuthToken';
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -50,6 +53,11 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+// Amir Token
+if(localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 function App() {
   return (
