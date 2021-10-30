@@ -29,15 +29,15 @@ const Register = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" name="email" value={name} onChange={onChange}/>
+                    <input type="email" name="email" value={email} onChange={onChange}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" value={name} onChange={onChange}/>
+                    <input type="password" name="password" value={password} onChange={onChange}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="password2">Password</label>
-                    <input type="password" name="password2" value={name} onChange={onChange}/>
+                    <input type="password" name="password2" value={password2} onChange={onChange}/>
                 </div>
                 <input type="submit" value="register" className="btn btn-primary btn-block"/>
             </form>

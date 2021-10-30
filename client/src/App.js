@@ -14,12 +14,13 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import Login from './components/pages/Login';
+// import Login from './components/pages/Login';
 import Product from './components/pages/Product';
 // import Signup from './components/pages/Signup';
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 import AuthState from './context/auth/authState';
 
