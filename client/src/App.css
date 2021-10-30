@@ -20,6 +20,7 @@
   --primary: #0b3278;
   --secondary: #9bb0d2;
   --tertiary: #f2f5ff;
+  
 }
 
 @font-face {
@@ -87,7 +88,7 @@
 /* original */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -95,12 +96,14 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: black;
   text-decoration: none;
+  transition: 0.25s;
 }
 
 a:hover {
-  color: #666;
+  color: var(--secondary);
+  
 }
 
 ul {
@@ -142,7 +145,7 @@ img {
 }
 
 .text-primary {
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 .text-dark {
@@ -256,7 +259,7 @@ img {
 
 .btn {
   display: inline-block;
-  background: var(--light-color);
+  background: var(--tertiary);
   color: #333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
@@ -289,7 +292,7 @@ img {
   padding: 0.2rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: var(--light-color);
+  background: var(--tertiary);
   color: #333;
   border-radius: 5px;
 }
@@ -298,7 +301,7 @@ img {
   padding: 0.7rem;
   margin: 1rem 0;
   opacity: 0.9;
-  background: var(--light-color);
+  background: var(--tertiary);
   color: #333;
 }
 
@@ -306,7 +309,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  background: var(--primary);
   color: #fff;
 }
 
@@ -314,7 +317,7 @@ img {
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
+  background: var(--tertiary);
   color: #333;
 }
 
@@ -375,7 +378,7 @@ input {
   color: #888;
 }
 
-input[type='text'],
+.name-text-field,
 input[type='email'],
 input[type='password'],
 input[type='date'],
@@ -432,7 +435,7 @@ table th {
   padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
-  border-bottom: solid 1px var(--primary-color);
+  border-bottom: solid 1px var(--primary);
   opacity: 0.9;
   margin-bottom: 1rem;
 }
@@ -448,7 +451,7 @@ table th {
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  color: var(--tertiary);
 }
 
 .navbar .welcome span {
