@@ -1,6 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
+import AuthContext from '../../context/auth/authContext';
 
 const Register = () => {
+    const authContext = useContext(AuthContext);
+
+    const { register, error, clearErrors } = authContext;
+
+    useEffect(() => {
+    
+        if (error === 'User exists') {
+        //   setAlert(error, 'danger');
+            console.log('user already defined');
+          clearErrors();
+        }
+    //   }, [error, isAuthenticated, props.history]);
+       }, [error]);
+
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -15,6 +30,11 @@ const Register = () => {
     const onSubmit = e => {
         e.preventDefault();
         console.log('Register submit');
+        register({
+            name,
+            email,
+            password
+          });
     };
 
     return (
