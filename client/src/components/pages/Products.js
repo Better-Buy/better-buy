@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useLocation } from 'react-router-dom'
 
-function Product() {
+export default function Products() {
+    const {search} = useLocation()
+    console.log(search)
+
     return (
         <div>
-            <h1>Products</h1>
+            <h1>Product to show by params</h1>
         </div>
-    )
+    );
 }
-
-export default Product
