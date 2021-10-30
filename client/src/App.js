@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import './App.css';
+
 // import Navbar from './components/Navbar';
 // import SearchBar from './components/SearchBar'
 
@@ -16,7 +17,7 @@ import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 // import Login from './components/pages/Login';
-import Product from './components/pages/Product';
+import Products from './components/pages/Products';
 // import Signup from './components/pages/Signup';
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
@@ -31,6 +32,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -51,9 +53,14 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const API_KEY = process.env.REACT_APP_API_KEY
+
+
 function App() {
   return (
+    
     <ApolloProvider client={client}>
+
     <AuthState>
       <Router>
         <Fragment className="App">
@@ -62,7 +69,7 @@ function App() {
           <div className='conainter'>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/Product' component={Product} />
+              <Route exact path='/Products' component={Products} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
               <Route exact path='/about' component={About} />

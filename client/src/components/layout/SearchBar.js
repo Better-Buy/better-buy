@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './SearchBar.css'
 import { Grid } from '@mui/material'
 import Box from '@mui/material/Box';
@@ -10,11 +11,11 @@ export default function SearchBar() {
       <Grid container className="search-bar"  JjustifyContent="space-around" direction="row" alignItems="Center">
          
           <Grid className="category-container" container item sm={12} md={9} lg={9} spacing={6}>
-          <Grid item>Laptops</Grid>
-            <Grid item>TVs</Grid>
-            <Grid item>Cameras</Grid>
-            <Grid item>Speakers</Grid>
-            <Grid item>Headphones</Grid>
+          <Grid item><Link to = '/products'>Laptops</Link></Grid>
+            <Grid item><Link to = '/products'>TVs</Link></Grid>
+            <Grid item><Link to = '/products'>Cameras</Link></Grid>
+            <Grid item><Link to = '/products'>Speakers</Link></Grid>
+            <Grid item><Link to = '/products'>Headphones</Link></Grid>
           </Grid>
             
           <Grid container item sm={12} md={3} lg={3} >
