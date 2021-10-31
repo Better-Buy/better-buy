@@ -53,7 +53,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const API_KEY = process.env.REACT_APP_API_KEY
 
 
 function App() {

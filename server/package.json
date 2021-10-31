@@ -2,7 +2,7 @@
   "name": "better-buy-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon",
@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server-express": "^3.4.0",
+    "apollo-server-express": "^2.15.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.1",
     "graphql": "^15.7.2",

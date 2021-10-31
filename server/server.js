@@ -2,6 +2,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
+require('dotenv').config();
 
 //calling our resolvers.
 const { typeDefs, resolvers } = require('./schemas');
@@ -11,6 +12,7 @@ const db = require('./config/connection');
 //declaring our port number. 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
