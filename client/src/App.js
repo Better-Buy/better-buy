@@ -26,6 +26,8 @@ import PrivateRoute from './components/routing/PrivateRoute';
 
 
 import AuthState from './context/auth/authState';
+import AlertState from './context/alert/AlertState';
+import Alerts from './components/layout/Alerts';
 
 //Amir  token
 import setAuthToken from './utils/setAuthToken';
@@ -65,23 +67,26 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <AuthState>
-      <Router>
-        <Fragment className="App">
-          <Navbar />
-          <SearchBar />
-          <div className='conainter'>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              {/* Amir path to Home will direct to login page if not logged in*/}
-              {/* <PrivateRoute exact path='/' component={Home} />               */}
-              <Route exact path='/Product' component={Product} />
-              <Route exact path='/login' component={Login} />
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/about' component={About} />
-            </Switch>
-          </div>
-        </Fragment>
-      </Router>
+      <AlertState>
+        <Router>
+          <Fragment className="App">
+            <Navbar />
+            <SearchBar />
+            <div className='conainter'>
+              <Alerts />
+              <Switch>
+                <Route exact path='/' component={Home} />
+                {/* Amir path to Home will direct to login page if not logged in*/}
+                {/* <PrivateRoute exact path='/' component={Home} />               */}
+                <Route exact path='/Product' component={Product} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/register' component={Register} />
+                <Route exact path='/about' component={About} />
+              </Switch>
+            </div>
+          </Fragment>
+        </Router>
+      </AlertState>
     </AuthState>
    </ApolloProvider>
   );
