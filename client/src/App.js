@@ -22,6 +22,8 @@ import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import PrivateRoute from './components/routing/PrivateRoute';
+
 
 import AuthState from './context/auth/authState';
 
@@ -70,6 +72,8 @@ function App() {
           <div className='conainter'>
             <Switch>
               <Route exact path='/' component={Home} />
+              {/* Amir path to Home will direct to login page if not logged in*/}
+              {/* <PrivateRoute exact path='/' component={Home} />               */}
               <Route exact path='/Product' component={Product} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
