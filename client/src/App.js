@@ -63,7 +63,7 @@ function App() {
         <Fragment className="App">
           <Navbar />
           <SearchBar />
-          <div className='conainter'>
+          <div className='container'>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/Products' component={Products} />

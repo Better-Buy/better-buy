@@ -1,0 +1,20 @@
+.product-list-card {
+    padding: 30px 8px 30px 8px;
+    margin:40px;
+    box-shadow: 2.5px 2.5px 10px var(--secondary);
+    color: var(--primary);
+}
+
+.product-main-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.product-name {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.product-price {
+    margin-bottom: 3vh;
+}

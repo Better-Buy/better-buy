@@ -116,10 +116,10 @@ img {
 
 /* Utilities */
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 /* Text Styles*/

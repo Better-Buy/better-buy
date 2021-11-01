@@ -27,8 +27,8 @@ export default function Products() {
         case 'Speakers':
             catID = "pcmcat310200050004";
             break;
-        case 'Headphones':
-            catID = "abcat0204000";
+        case 'Desktops':
+            catID = "abcat0501000";
             break;
         default:
             catID = "abcat0502000";
@@ -49,7 +49,7 @@ export default function Products() {
               setIsLoaded(true);
               setItems(result.products);
               console.log(items);
-             console.log(items[0].customerReviewAverage)
+             
               
             },
             // Note: it's important to handle errors here
@@ -69,13 +69,14 @@ export default function Products() {
         return <div>Loading...</div>;
       } else {
        return (
-        <Grid container justifyContent="space-between" direction="row" alignItems="Center">
-          
+         <div>
+        <h1 className="category-name">{item}</h1>
+        <Grid container justifyContent="space-around" justifyItems="center" direction="row" alignItems="stretch">
         {items.map(product => (
           <ProductList 
           key={product.sku}
          name={product.name}
-         price={product.price}
+         price={product.regularPrice}
          mainImage={product.image}
          alternateImage={product.alternateViewsImage}
          customerRating={product.customerReviewAverage}
@@ -84,6 +85,7 @@ export default function Products() {
         ))}
         
         </Grid>
+        </div>
         );
       }
     }

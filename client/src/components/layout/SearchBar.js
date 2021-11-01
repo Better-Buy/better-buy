@@ -13,7 +13,7 @@ export default function SearchBar() {
             <Grid item><Link to = '/products?item=TVs'>TVs</Link></Grid>
             <Grid item><Link to = '/products?item=Cameras'>Cameras</Link></Grid>
             <Grid item><Link to = '/products?item=Speakers'>Speakers</Link></Grid>
-            <Grid item><Link to = '/products?item=Headphones'>Headphones</Link></Grid>
+            <Grid item><Link to = '/products?item=Desktops'>Desktops</Link></Grid>
           </Grid>
             
          <SearchBox />

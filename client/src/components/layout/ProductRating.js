@@ -3,17 +3,11 @@ import Ratings from 'react-ratings-declarative';
 
 
 export default class ProductRating extends Component {
-  
-        constructor(props) {
-            super(props)
-            this.state = {
-                x: this.props.customerRating
-            }
-        }
+    
         render() {
-        if(this.state.x = null) {
+        if(this.props.customerRating == null) {
             return (
-                <div>no ratings</div>
+                <div>N/A</div>
             )
         }
        
@@ -23,11 +17,11 @@ export default class ProductRating extends Component {
           widgetDimensions="40px"
           widgetSpacings="15px"
         >
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="15px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="15px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="15px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="15px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="15px" />
+          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
+          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
+          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
+          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
+          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
         </Ratings>
       );
     }

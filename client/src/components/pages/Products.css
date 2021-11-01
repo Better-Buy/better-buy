@@ -1,4 +1,5 @@
-.headshot {
-    max-width: 120px;
-    max-height: 120px;
+.category-name {
+    text-align: center;
+    font-size: 39.81px;
+    color: var(--primary);
 }
