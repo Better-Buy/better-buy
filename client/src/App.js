@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import './App.css';
+
 // import Navbar from './components/Navbar';
 // import SearchBar from './components/SearchBar'
 
@@ -15,9 +16,7 @@ import Navbar from './components/layout/Navbar';
 import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-// import Login from './components/pages/Login';
-import Product from './components/pages/Product';
-// import Signup from './components/pages/Signup';
+import Products from './components/pages/Products';
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
@@ -39,6 +38,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -58,15 +58,22 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
+=======
 // Amir Token
 if(localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
+
 function App() {
   return (
+    
     <ApolloProvider client={client}>
+
     <AuthState>
+
       <AlertState>
         <Router>
           <Fragment className="App">
@@ -87,6 +94,7 @@ function App() {
           </Fragment>
         </Router>
       </AlertState>
+
     </AuthState>
    </ApolloProvider>
   );
