@@ -10,7 +10,7 @@ const shoppingCart = <FontAwesomeIcon icon={faShoppingCart} />
 
 export default function Navbar() {
   return (
-    <Grid container className="navbar2" JjustifyContent="space-between" direction="row" alignItems="Center">
+    <Grid container className="navbar2" justifyContent="space-between" direction="row" alignItems="Center">
 
       <Grid container className="logo-container" item xs={12} sm={6} md={6} lg={6} justifyContent="flex-start" alignItems="Center">
         <Link to ='/' item><img className="logo" src={Logo} alt="Brand Logo"></img></Link>

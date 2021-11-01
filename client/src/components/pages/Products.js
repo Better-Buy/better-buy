@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { Grid } from '@mui/material'
 import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import './Products.css'
+import ProductList from '../layout/ProductList';
 
 export default function Products() {
     
@@ -47,7 +49,8 @@ export default function Products() {
               setIsLoaded(true);
               setItems(result.products);
               console.log(items);
-              console.log(items[0].image)
+             console.log(items[0].customerReviewAverage)
+              
             },
             // Note: it's important to handle errors here
             // instead of a catch() block so that we don't swallow
@@ -60,20 +63,27 @@ export default function Products() {
       }, [item])
       
 
-    if (error) {
+    if (error)      {
         return <div>Error: {error.message}</div>;
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
        return (
-            
-           <ul>
+        <Grid container justifyContent="space-between" direction="row" alignItems="Center">
+          
         {items.map(product => (
-          <li key={product.id}>
-            {product.name} {product.price} <img className="headshot" src={product.image} alt="Headshot" />
-          </li>
+          <ProductList 
+          key={product.sku}
+         name={product.name}
+         price={product.price}
+         mainImage={product.image}
+         alternateImage={product.alternateViewsImage}
+         customerRating={product.customerReviewAverage}
+         amountOfReviews={product.customerReviewCount}
+         />
         ))}
-      </ul>
+        
+        </Grid>
         );
       }
     }

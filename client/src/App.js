@@ -16,9 +16,7 @@ import Navbar from './components/layout/Navbar';
 import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-// import Login from './components/pages/Login';
 import Products from './components/pages/Products';
-// import Signup from './components/pages/Signup';
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
