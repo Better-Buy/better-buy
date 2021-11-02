@@ -17,6 +17,7 @@ import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Products from './components/pages/Products';
+import ProductItem from './components/pages/ProductItem'
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
@@ -87,6 +88,7 @@ function App() {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/about' component={About} />
+                <Route exact path='/product/:id' component={ProductItem} />
               </Switch>
             </div>
           </Fragment>

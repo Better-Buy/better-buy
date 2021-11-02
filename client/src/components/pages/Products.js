@@ -75,6 +75,7 @@ export default function Products() {
         {items.map(product => (
           <ProductList 
           key={product.sku}
+          sku={product.sku}
          name={product.name}
          price={product.regularPrice}
          mainImage={product.image}
