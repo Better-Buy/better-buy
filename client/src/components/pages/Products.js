@@ -4,11 +4,16 @@ import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import './Products.css'
 import ProductList from '../layout/ProductList';
+import formatProductPrice from "../../utils/Productprice"
+
+
 
 export default function Products() {
+
     
     const {search} = useLocation()
     const {item} = queryString.parse(search)
+    const Price = formatProductPrice(product)
     
     
     const API_KEY = process.env.REACT_APP_API_KEY
@@ -76,7 +81,7 @@ export default function Products() {
           <ProductList 
           key={product.sku}
          name={product.name}
-         price={product.regularPrice}
+         price={Price}
          mainImage={product.image}
          alternateImage={product.alternateViewsImage}
          customerRating={product.customerReviewAverage}
@@ -85,6 +90,8 @@ export default function Products() {
         ))}
         
         </Grid>
+        <AddToCart product={product} />
+        <RemoveFromCart product={product} />
         </div>
         );
       }
