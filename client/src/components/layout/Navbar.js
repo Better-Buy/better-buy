@@ -56,6 +56,8 @@ export default function Navbar() {
         {/*  Amir - if user authenticated authLinks otherwise registerLinks}
         {/* <ul>{isAuthenticated ? authLinks : registerLinks}</ul> */}
         <Link to ='/cart'>{shoppingCart}</Link>
+        <CartSummary />
+        <CheckoutCart />
       </Grid>
 
     </Grid>
