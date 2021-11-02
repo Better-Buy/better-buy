@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "stripe": "^8.184.0",
-    "use-shopping-cart": "^3.0.3"
+
+    "dotenv": "^10.0.0"
+
+    "axios": "^0.24.0"
+
   },
   "scripts": {
     "start": "node server/server.js",
