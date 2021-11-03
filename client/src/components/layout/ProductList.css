@@ -18,8 +18,17 @@
 .product-name {
     margin-top: 3vh;
     margin-bottom: 3vh;
+    color: black;
 }
 
 .product-price {
     margin-bottom: 3vh;
+    color: var(--primary);
+}
+
+.also-viewed {
+    text-align: center;
+    color: var(--primary);
+    font-size: 27.65px;
+    margin-top: 12vh;
 }

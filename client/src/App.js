@@ -88,7 +88,7 @@ function App() {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/about' component={About} />
-                <Route exact path='/product/:id' component={ProductItem} />
+                <Route exact path='/products/:id' component={ProductItem} />
               </Switch>
             </div>
           </Fragment>

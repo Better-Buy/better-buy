@@ -1,5 +1,5 @@
 .search-bar {
-    margin-bottom: 5vh;
+    margin-bottom: 6vh;
 }
 
 .category-container {
@@ -17,4 +17,9 @@
 
 .link:hover {
     color: #FFB75A;
+}
+
+.add-item-button {
+    background-color: #FFB75A;
+    color: var(--primary);
 }

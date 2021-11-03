@@ -79,9 +79,7 @@ export default function Products() {
          name={product.name}
          price={product.regularPrice}
          mainImage={product.image}
-         alternateImage={product.alternateViewsImage}
          customerRating={product.customerReviewAverage}
-         amountOfReviews={product.customerReviewCount}
          />
         ))}
         

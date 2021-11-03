@@ -1,3 +1,41 @@
 .item-main-image, .item-alternate-image {
-    width: 35vw;
+    width: 22vw;
+}
+
+.manufacturer {
+    font-size: 27.65px;
+    color: var(--primary);
+    
+}
+
+.item-name {
+    font-size: 19.20px;
+}
+
+.span {
+    color: var(--primary);
+}
+
+.item-description {
+    color: var(--primary);
+    font-size: 16.00px;
+}
+
+.average-rating {
+    font-size: 19.20px;
+    color: var(--primary);
+   
+}
+
+.add-item-button {
+    width: 100%;
+}
+
+.item-review {
+    color: var(--dark-color);
+}
+
+.item-price {
+    font-size: 27.65px;
+    color: black;
 }
