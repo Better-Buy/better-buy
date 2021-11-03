@@ -49,11 +49,11 @@ function CreateProduct(props) {
         <h2>Create Product!</h2>
         <form onSubmit={handleFormSubmit}>
           <div className="flex-row space-between my-2">
-            <label htmlFor="firstName">Product Title</label>
+            <label htmlFor="productName">Product Title</label>
             <input
               placeholder="Title"
-              name="firstName"
-              type="firstName"
+              name="productName"
+              type="productName"
               id="title"
               onChange={handleChange}
             />
@@ -62,8 +62,8 @@ function CreateProduct(props) {
             <label htmlFor="lastName">Product Description</label>
             <input
               placeholder="Your Description..."
-              name="lastName"
-              type="lastName"
+              name="desc"
+              type="desc"
               id="description"
               onChange={handleChange}
             />

@@ -18,7 +18,7 @@ const BusinessTools = () => {
   return (
     <div>
       <Jumbotron>
-        <h1>My Sales!</h1>
+        <h1>My Sales</h1>
       </Jumbotron>
 
       <div class="form">
@@ -44,7 +44,7 @@ const BusinessTools = () => {
     <canvas id="myChart"></canvas>
     <script src="index.js"></script>
 
-    <h1>Top Products</h1>
+    <h1>Highest Grossing Products</h1>
     <div class="topsellers">
       <table>
         <thead>
@@ -62,6 +62,7 @@ const BusinessTools = () => {
       <table>
         <thead>
           <th>Transaction Name</th>
+          <th>Transaction Price</th>
           <th>Transaction Date</th>
         </thead>
         <tbody id="tbody2">
