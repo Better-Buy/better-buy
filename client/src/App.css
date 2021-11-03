@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 /* Global Styles */
-:root {
-  --primary-color: #003699;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
-}
+
+/*Type-Scale.com minor third 16px base
+8.916rem/142.66px
+7.43rem/118.88px
+6.192rem/99.07px
+5.16rem/82.56px
+4.3rem/68.80px
+3.583rem/57.33px
+2.986rem/47.78px
+2.488rem/39.81px
+2.074rem/33.18px
+1.728rem/27.65px
+1.44rem/23.04px
+1.2rem/19.20px
+1rem/16.00px
+0.833rem/13.33px
+0.694rem/11.11px
+0.579rem/9.26px*/
 
 * {
   box-sizing: border-box;
@@ -20,6 +31,10 @@
   --primary: #0b3278;
   --secondary: #9bb0d2;
   --tertiary: #f2f5ff;
+  --quaternary: #FFB75A;
+  --dark-color: #333333;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
   
 }
 
@@ -101,11 +116,6 @@ a {
   transition: 0.25s;
 }
 
-a:hover {
-  color: var(--secondary);
-  
-}
-
 ul {
   list-style: none;
 }
@@ -119,7 +129,7 @@ img {
   max-width: 1400px;
   margin: auto;
   overflow: hidden;
-  padding: 0 1rem;
+  padding: 0 2vw;
 }
 
 /* Text Styles*/

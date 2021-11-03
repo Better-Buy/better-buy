@@ -1,5 +1,5 @@
 .search-bar {
-    margin-bottom: 5vh;
+    margin-bottom: 6vh;
 }
 
 .category-container {
@@ -9,4 +9,17 @@
 .search {
     margin-bottom: 2vh;
     padding-left: 5vh;
+}
+
+.link {
+    transition: 0.35s;
+}
+
+.link:hover {
+    color: #FFB75A;
+}
+
+.add-item-button {
+    background-color: #FFB75A;
+    color: var(--primary);
 }

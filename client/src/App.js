@@ -17,6 +17,7 @@ import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Products from './components/pages/Products';
+import ProductItem from './components/pages/ProductItem'
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
 import Register from './components/auth/Register';
@@ -59,8 +60,6 @@ const client = new ApolloClient({
 });
 
 
-
-=======
 // Amir Token
 if(localStorage.token) {
   setAuthToken(localStorage.token);
@@ -79,16 +78,17 @@ function App() {
           <Fragment className="App">
             <Navbar />
             <SearchBar />
-            <div className='conainter'>
+            <div className='container'>
               <Alerts />
               <Switch>
                 <Route exact path='/' component={Home} />
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
-                <Route exact path='/Product' component={Product} />
+                <Route exact path='/Products' component={Products} />
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/about' component={About} />
+                <Route exact path='/products/:id' component={ProductItem} />
               </Switch>
             </div>
           </Fragment>

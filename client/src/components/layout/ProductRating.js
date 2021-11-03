@@ -17,11 +17,11 @@ export default class ProductRating extends Component {
           widgetDimensions="40px"
           widgetSpacings="15px"
         >
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
-          <Ratings.Widget widgetRatedColor="Gold" widgetSpacing="1px" widgetDimension="20px" />
+          <Ratings.Widget widgetRatedColor="#FFB75A" widgetSpacing="1px" widgetDimension="21px" />
+          <Ratings.Widget widgetRatedColor="#FFB75A" widgetSpacing="1px" widgetDimension="21px" />
+          <Ratings.Widget widgetRatedColor="#FFB75A" widgetSpacing="1px" widgetDimension="21px" />
+          <Ratings.Widget widgetRatedColor="#FFB75A" widgetSpacing="1px" widgetDimension="21px" />
+          <Ratings.Widget widgetRatedColor="#FFB75A" widgetSpacing="1px" widgetDimension="21px" />
         </Ratings>
       );
     }
