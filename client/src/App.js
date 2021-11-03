@@ -20,17 +20,19 @@ import Products from './components/pages/Products';
 import ProductItem from './components/pages/ProductItem'
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
-import PrivateRoute from './components/routing/PrivateRoute';
+// import Register from './components/auth/Register';
+// import Login from './components/auth/Login';
+import Signup from './components/pages/Signup';
+import Login from './components/pages/Login';
+// import PrivateRoute from './components/routing/PrivateRoute';
 
 
-import AuthState from './context/auth/authState';
-import AlertState from './context/alert/AlertState';
-import Alerts from './components/layout/Alerts';
+// import AuthState from './context/auth/authState';
+// import AlertState from './context/alert/AlertState';
+// import Alerts from './components/layout/Alerts';
 
-//Amir  token
-import setAuthToken from './utils/setAuthToken';
+// //Amir  token
+// import setAuthToken from './utils/setAuthToken';
 
 import {
   ApolloClient,
@@ -60,10 +62,10 @@ const client = new ApolloClient({
 });
 
 
-// Amir Token
-if(localStorage.token) {
-  setAuthToken(localStorage.token);
-}
+// // Amir Token
+// if(localStorage.token) {
+//   setAuthToken(localStorage.token);
+// }
 
 
 function App() {
@@ -71,31 +73,32 @@ function App() {
     
     <ApolloProvider client={client}>
 
-    <AuthState>
+    {/* <AuthState>
 
-      <AlertState>
+      <AlertState> */}
         <Router>
           <Fragment className="App">
             <Navbar />
             <SearchBar />
             <div className='container'>
-              <Alerts />
+              {/* <Alerts /> */}
               <Switch>
-                <Route exact path='/' component={Home} />
+                {/* <Route exact path='/' component={Home} /> */}
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
                 <Route exact path='/Products' component={Products} />
                 <Route exact path='/login' component={Login} />
-                <Route exact path='/register' component={Register} />
+                {/* <Route exact path='/register' component={Register} /> */}
+                <Route exact path='/signup' component={Signup} />
                 <Route exact path='/about' component={About} />
                 <Route exact path='/products/:id' component={ProductItem} />
               </Switch>
             </div>
           </Fragment>
         </Router>
-      </AlertState>
+      {/* </AlertState>
 
-    </AuthState>
+    </AuthState> */}
    </ApolloProvider>
   );
 }
