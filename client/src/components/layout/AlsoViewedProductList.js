@@ -11,8 +11,6 @@ export default function AlsoViewedProductList(props) {
     <img className="product-main-image" src={props.mainImage} alt="product-main-image" />
     <div className="product-name" >{props.name}</div>
     <div className="product-price" >${props.price}</div>
-          <ProductRating customerRating={props.customerRating}/> 
-         
     </Grid>
     
     )
