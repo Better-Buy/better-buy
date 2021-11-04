@@ -41,7 +41,6 @@ import {
   from,
 } from '@apollo/client';
 
-const queryClient = new QueryClient();
 const stripePromise = loadStripe('pk_test_51Jq4qZGzUjXx6ZT6RJDT6629lmeCT3QuFPg4JrDbQML31wlbTIKlZhRRvaYQBuiHFDI5jGbA36gPCadnZ1SgcCGk00rncH3LQT');
 
 const httpLink = createHttpLink({
@@ -95,7 +94,7 @@ function App() {
                 <Route exact path='/' component={Home} />
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
-                <Route exact path='/Product' component={Product} />
+                <Route exact path='/Product' component={Products} />
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/about' component={About} />

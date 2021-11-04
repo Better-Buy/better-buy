@@ -47,7 +47,7 @@ export default function Navbar() {
 
       <Grid container className="logo-container" item xs={12} sm={6} md={6} lg={6} justifyContent="flex-start" alignItems="Center">
         <Link to ='/' item><img className="logo" src={Logo} alt="Brand Logo"></img></Link>
-        <Link to ='/' item className="logo-text">etter Buy</Link> 
+        <Link to ='/' item className="logo-text">Better Buy</Link> 
       </Grid>
       
       <Grid container item xs={12} sm={6} md={6} lg={6} className="navlinks" justifyContent="flex-end" >
