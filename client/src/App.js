@@ -20,6 +20,7 @@ import Products from './components/pages/Products';
 import ProductItem from './components/pages/ProductItem'
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
+import { StoreProvider } from './utils/GlobalState';
 // import Register from './components/auth/Register';
 // import Login from './components/auth/Login';
 import Signup from './components/pages/Signup';
@@ -78,6 +79,7 @@ function App() {
       <AlertState> */}
         <Router>
           <Fragment className="App">
+          <StoreProvider>
             <Navbar />
             <SearchBar />
             <div className='container'>
@@ -94,6 +96,7 @@ function App() {
                 <Route exact path='/products/:id' component={ProductItem} />
               </Switch>
             </div>
+            </StoreProvider>
           </Fragment>
         </Router>
       {/* </AlertState>
