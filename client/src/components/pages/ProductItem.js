@@ -58,7 +58,7 @@ export default function ProductItem() {
            justifyContent="flex-start"
            align="center"
          >
-             <Grid item lg={12} className="manufacturer">{items.manufacturer}</Grid>
+             <Grid item lg={12} mt={8} className="manufacturer">{items.manufacturer}</Grid>
            <Grid item lg={12} mb={1} pl={12} pr={12} className="item-name">{items.name}</Grid>
            <Grid  item className="item-review" lg={10} mb={1}><ProductRating customerRating={items.customerReviewAverage}/>&nbsp;<span className="average-rating">{items.customerReviewAverage}</span>&nbsp;({items.customerReviewCount}&nbsp;Reviews)</Grid>
            <Grid item ><span className="span">Model:</span>{items.modelNumber}&nbsp;&nbsp;&nbsp;</Grid>

@@ -27,10 +27,6 @@ export default function AlsoViewed(props) {
     const [viewed2Price, setViewed2Price] = useState([]);
     const [viewed3Price, setViewed3Price] = useState([]);
 
-    const [viewed1CustomerRating, setViewed1CustomerRating] = useState([]);
-    const [viewed2CustomerRating, setViewed2CustomerRating] = useState([]);
-    const [viewed3CustomerRating, setViewed3CustomerRating] = useState([]);
-
     useEffect(() => {
         fetch("https://api.bestbuy.com/v1/products/" + sku + "/alsoViewed?apiKey=" + API_KEY)
           .then(res => res.json())
@@ -53,11 +49,6 @@ export default function AlsoViewed(props) {
               setViewed1Price(result.results[0].prices.current);
               setViewed2Price(result.results[1].prices.current);
               setViewed3Price(result.results[3].prices.current);
-
-              setViewed1CustomerRating(result.results[0].customerReviews.averageScore);
-              setViewed2CustomerRating(result.results[1].customerReviews.averageScore);
-              setViewed3CustomerRating(result.results[3].customerReviews.averageScore);
-             
               
             },
             // Note: it's important to handle errors here
@@ -86,21 +77,18 @@ export default function AlsoViewed(props) {
          name={viewed1Name}
          price={viewed1Price}
          mainImage={viewed1MainImage}
-         customerRating={viewed1CustomerRating}
           />
           <AlsoViewedProductList 
          sku={viewed2Sku}
          name={viewed2Name}
          price={viewed2Price}
          mainImage={viewed2MainImage}
-          customerRating={viewed2CustomerRating}
           />
           <AlsoViewedProductList 
          sku={viewed3Sku}
          name={viewed3Name}
          price={viewed3Price}
          mainImage={viewed3MainImage}
-          customerRating={viewed3CustomerRating}
           />
           </Grid>
                 </div>
