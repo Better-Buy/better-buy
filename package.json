@@ -27,5 +27,17 @@
   },
   "devDependencies": {
     "concurrently": "^6.3.0"
-  }
+  },
+  "description": "djfklsheilf",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Better-Buy/better-buy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Better-Buy/better-buy/issues"
+  },
+  "homepage": "https://github.com/Better-Buy/better-buy#readme"
 }
