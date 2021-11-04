@@ -5,20 +5,53 @@ import './ProductItem.css'
 import { useParams } from 'react-router'
 import ProductRating from '../layout/ProductRating'
 import AlsoViewed from '../layout/AlsoViewed'
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { idbPromise } from "../../utils/helpers";
 
 
 export default function ProductItem() {
-    const {id} = useParams()
-    console.log(id);
+    const {sku} = useParams()
+    console.log(sku);
     const API_KEY = process.env.REACT_APP_API_KEY
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+
+    const [state, dispatch] = useStoreContext();
+
+    const name = items.name;
+    const image = items.image;
+    const price = items.regularPrice;
+
+    const item = {sku, name, image, price}
    
+    const { cart } = state
+
+    const addToCart = () => {
+      const itemInCart = cart.find((cartItem) => cartItem.sku === sku)
+      if (itemInCart) {
+        dispatch({
+          type: UPDATE_CART_QUANTITY,
+          sku: sku,
+          purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        });
+        idbPromise('cart', 'put', {
+          ...itemInCart,
+          purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
+        });
+      } else {
+        dispatch({
+          type: ADD_TO_CART,
+          product: { ...item, purchaseQuantity: 1 }
+        });
+        idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
+      }
+    }
 
     useEffect(() => {
-        fetch("https://api.bestbuy.com/v1/products((search=" + id + "))?apiKey=" + API_KEY + "&pageSize=16&format=json")
+        fetch("https://api.bestbuy.com/v1/products((search=" + sku + "))?apiKey=" + API_KEY + "&pageSize=16&format=json")
           .then(res => res.json())
           .then(
             (result) => {
@@ -38,7 +71,7 @@ export default function ProductItem() {
               setError(error);
             }
           )
-      },[id])
+      },[sku])
 
       if (error)      {
         return <div>Error: {error.message}</div>;
@@ -59,7 +92,7 @@ export default function ProductItem() {
            align="center"
          >
              <Grid item lg={12} mt={8} className="manufacturer">{items.manufacturer}</Grid>
-           <Grid item lg={12} mb={1} pl={12} pr={12} className="item-name">{items.name}</Grid>
+           <Grid item lg={12} mb={1} pl={12} pr={12} className="item-name">{name}</Grid>
            <Grid  item className="item-review" lg={10} mb={1}><ProductRating customerRating={items.customerReviewAverage}/>&nbsp;<span className="average-rating">{items.customerReviewAverage}</span>&nbsp;({items.customerReviewCount}&nbsp;Reviews)</Grid>
            <Grid item ><span className="span">Model:</span>{items.modelNumber}&nbsp;&nbsp;&nbsp;</Grid>
            <Grid item mb={6}><span className="span">Sku:</span>{items.sku}</Grid>
@@ -73,7 +106,7 @@ export default function ProductItem() {
            alignItems="center"
            mb={6}
          >
-           <Grid item lg={6}><img className="item-main-image" src={items.image} alt="main-image"></img></Grid>
+           <Grid item lg={6}><img className="item-main-image" src={image} alt="main-image"></img></Grid>
            <Grid item lg={6}><img className="item-alternate-image" src={items.alternateViewsImage} alt="main-image"></img></Grid>
            </Grid>
           
@@ -81,8 +114,8 @@ export default function ProductItem() {
            <Grid container item justifyContent="center" alignItems="center" direction="row" lg={5}>
            <Grid  item className="item-description" lg={10} mt={5}>{items.longDescription}</Grid>
            <Grid container item justifyContent="center" alignItems="center" direction="column" lg={5}>
-           <Grid className="item-price" item lg={6} mb={2} mt={5}>${items.regularPrice}</Grid>
-           <Grid  item className="add-item-buttom" lg={6} mb={8}><Button variant="contained" size="large" style={{backgroundColor: '#FFB75A' , color: '#0b3278', fontFamily: 'now bold'}} className="add-item-buttom">add to cart</Button></Grid>
+           <Grid className="item-price" item lg={6} mb={2} mt={5}>${price}</Grid>
+           <Grid  item className="add-item-buttom" lg={6} mb={8}><Button variant="contained" size="large" style={{backgroundColor: '#FFB75A' , color: '#0b3278', fontFamily: 'now bold'}} className="add-item-buttom" onClick={addToCart}>add to cart</Button></Grid>
            </Grid>
            </Grid>
            <AlsoViewed sku={items.sku} />
