@@ -1,8 +1,13 @@
 .product-list-card {
-    padding: 30px 8px 30px 8px;
-    margin:40px;
+    padding: 20px 8px 20px 8px;
     box-shadow: 2.5px 2.5px 10px var(--secondary);
     color: var(--primary);
+    transition: 0.5s;
+}
+
+.product-list-card:hover {
+    background-color: var(--tertiary);
+    box-shadow: 2.5px 2.5px 10px var(--dark-color);
 }
 
 .product-main-image {
@@ -13,8 +18,17 @@
 .product-name {
     margin-top: 3vh;
     margin-bottom: 3vh;
+    color: black;
 }
 
 .product-price {
     margin-bottom: 3vh;
+    color: var(--primary);
+}
+
+.also-viewed {
+    text-align: center;
+    color: var(--primary);
+    font-size: 27.65px;
+    margin-top: 12vh;
 }

@@ -17,21 +17,24 @@ import SearchBar from './components/layout/SearchBar'
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Products from './components/pages/Products';
+import ProductItem from './components/pages/ProductItem'
 import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context';
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
+
 import PrivateRoute from './components/routing/PrivateRoute';
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from "use-shopping-cart";
 import { Toaster } from 'react-hot-toast';
+import { StoreProvider } from './utils/GlobalState';
+import Signup from './components/pages/Signup';
+import Login from './components/pages/Login';
 
-import AuthState from './context/auth/authState';
-import AlertState from './context/alert/AlertState';
-import Alerts from './components/layout/Alerts';
+// import AuthState from './context/auth/authState';
+// import AlertState from './context/alert/AlertState';
+// import Alerts from './components/layout/Alerts';
 
-//Amir  token
-import setAuthToken from './utils/setAuthToken';
+// //Amir  token
+// import setAuthToken from './utils/setAuthToken';
 
 import {
   ApolloClient,
@@ -63,14 +66,6 @@ const client = new ApolloClient({
 });
 
 
-
-
-// Amir Token
-if(localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
-
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -80,29 +75,34 @@ function App() {
         currecty="USD"
       > 
 
-    <AuthState>
+    {/* <AuthState>
 
-      <AlertState>
+      <AlertState> */}
         <Router>
           <Fragment className="App">
+          <StoreProvider>
             <Navbar />
             <Toaster position="bottom-center"/>
             <SearchBar />
-            <div className='conainter'>
-              <Alerts />
+            <div className='container'>
+              {/* <Alerts /> */}
               <Switch>
-                <Route exact path='/' component={Home} />
+                {/* <Route exact path='/' component={Home} /> */}
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
-                <Route exact path='/Product' component={Products} />
+                <Route exact path='/Products' component={Products} />
                 <Route exact path='/login' component={Login} />
-                <Route exact path='/register' component={Register} />
+                {/* <Route exact path='/register' component={Register} /> */}
+                <Route exact path='/signup' component={Signup} />
                 <Route exact path='/about' component={About} />
+                <Route exact path='/products/:id' component={ProductItem} />
               </Switch>
             </div>
+            </StoreProvider>
           </Fragment>
         </Router>
-      </AlertState>
+      {/* </AlertState>
+
 
     </AuthState>
       </CartProvider>

@@ -46,7 +46,7 @@ export default function Products() {
     const [items, setItems] = useState([]);
     
     useEffect(() => {
-        fetch("https://api.bestbuy.com/v1/products((categoryPath.id=" + catID + "))?apiKey=" + API_KEY + "&format=json")
+        fetch("https://api.bestbuy.com/v1/products((categoryPath.id=" + catID + "))?apiKey=" + API_KEY + "&pageSize=16&format=json")
           .then(res => res.json())
           .then(
             (result) => {
@@ -80,12 +80,11 @@ export default function Products() {
         {items.map(product => (
           <ProductList 
           key={product.sku}
+          sku={product.sku}
          name={product.name}
          price={Price}
          mainImage={product.image}
-         alternateImage={product.alternateViewsImage}
          customerRating={product.customerReviewAverage}
-         amountOfReviews={product.customerReviewCount}
          />
         ))}
         
