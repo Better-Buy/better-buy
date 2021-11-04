@@ -14,7 +14,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   width: 65vw;
-  height: 79vh;
+  height: 78vh;
   margin: auto;
 `;
 
