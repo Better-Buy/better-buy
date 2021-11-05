@@ -21,8 +21,7 @@ const PORT = process.env.PORT || 3000;
 
 const URI = process.env.MONGODB_URL;
 
-// mongoose.connect(URI || 'mongodb://localhost/mernshopping', {
-  mongoose.connect(URI || 'mongodb+srv://eamahma:WauksRO7rijDjO7X@better-buy.sw2vw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(URI || 'mongodb://localhost/mernshopping', {
 useNewUrlParser: true, 
 
 useUnifiedTopology: true 
