@@ -75,9 +75,6 @@ function App() {
         currecty="USD"
       > 
 
-    {/* <AuthState>
-
-      <AlertState> */}
         <Router>
           <Fragment className="App">
           <StoreProvider>
@@ -87,7 +84,7 @@ function App() {
             <div className='container'>
               {/* <Alerts /> */}
               <Switch>
-                {/* <Route exact path='/' component={Home} /> */}
+                 <Route exact path='/' component={Home} />
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
                 <Route exact path='/Products' component={Products} />
@@ -95,12 +92,15 @@ function App() {
                 {/* <Route exact path='/register' component={Register} /> */}
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/about' component={About} />
-                <Route exact path='/products/:id' component={ProductItem} />
+                showNavigation();
+                <Route exact path='/products/:sku' component={ProductItem} />
               </Switch>
             </div>
             </StoreProvider>
           </Fragment>
         </Router>
+
+
       </CartProvider>
    </ApolloProvider>
   );
