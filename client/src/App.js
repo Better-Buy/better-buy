@@ -101,10 +101,6 @@ function App() {
             </StoreProvider>
           </Fragment>
         </Router>
-      {/* </AlertState>
-
-
-    </AuthState>
       </CartProvider>
    </ApolloProvider>
   );
