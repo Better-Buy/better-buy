@@ -87,11 +87,12 @@ function App() {
                  <Route exact path='/' component={Home} />
                 {/* Amir path to Home will direct to login page if not logged in*/}
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
-                {/* <Route exact path='/Products' component={Products} /> */}
+                <Route exact path='/Products' component={Products} />
                 <Route exact path='/login' component={Login} />
                 {/* <Route exact path='/register' component={Register} /> */}
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/about' component={About} />
+                showNavigation();
                 <Route exact path='/products/:sku' component={ProductItem} />
               </Switch>
             </div>
