@@ -1,11 +1,10 @@
-import React, {Fragment, useContext} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import './Navbar.css'
 import { Grid } from '@mui/material'
 import Logo from '../../assets/img/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
-// import AuthContext from '../../context/auth/authContext'
 import Auth from "../../utils/auth";
 
 const shoppingCart = <FontAwesomeIcon icon={faShoppingCart} />
@@ -36,10 +35,7 @@ export default function Navbar() {
         <Link to ='/' item><img className="logo" src={Logo} alt="Brand Logo"></img></Link>
         <Link to ='/' item className="logo-text">Better Buy</Link> 
       </Grid>
-      
-            {showNavigation()}
-
-
+      {showNavigation()}
     </Grid>
   );
 }
