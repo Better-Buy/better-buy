@@ -2,6 +2,8 @@
  [Licensing](#licensing) | [Description](#description) | [Installation](#installation-intstructions) | [Usage](#usage) | [Contribution](#contribution) | [Tests](#test-parameters) | [Contact](#contact)
 
   ## Project 3 - Better Buy 
+  
+  ### Deployed application - https://better-buy-store.herokuapp.com/
 
 
 ### Licensing
