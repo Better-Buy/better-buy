@@ -4,9 +4,7 @@ import { Grid } from '@mui/material'
 import AlsoViewedProductList from './AlsoViewedProductList'
 
 export default function AlsoViewed(props) {
-    const {id} = useParams()
-    const sku = id;
-    console.log(sku);
+    const {sku} = useParams()
     const API_KEY = process.env.REACT_APP_API_KEY;
 
     const [error, setError] = useState(null);
