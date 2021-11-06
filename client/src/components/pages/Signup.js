@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
@@ -31,16 +31,11 @@ function Signup(props) {
   };
 
   return (
-    // <div className="container my-1">
-    //   <Link to="/login">← Go to Login</Link>
-
-    //   <h2>Signup</h2>
     <div className='form-container'>
       <h1>
           Account <span className="text-primary">Register</span>
       </h1>
       <form onSubmit={handleFormSubmit}>
-        {/* <div className="flex-row space-between my-2"> */}
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
           <input className="name-text-field"
@@ -51,7 +46,6 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="flex-row space-between my-2"> */}
         <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
           <input className="name-text-field"
@@ -62,7 +56,6 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="flex-row space-between my-2"> */}
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input className="name-text-field"
@@ -73,7 +66,6 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="flex-row space-between my-2"> */}
         <div className="form-group">
           <label htmlFor="pwd">Password:</label>
           <input className="name-text-field"
@@ -84,10 +76,6 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        {/* <div className="flex-row flex-end"> */}
-        {/* <div className="form-group">
-          <button type="submit">Submit</button>
-        </div> */}
         <input type="submit" value="register" className="btn btn-primary btn-block"/>
       </form>
     </div>
