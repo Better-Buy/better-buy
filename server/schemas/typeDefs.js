@@ -5,19 +5,14 @@ const { gql } = require('apollo-server-express');
 //This WILL change once we bring other components in. 
 
 const typeDefs = gql`
-  type Category {
-    _id: ID
-    name: String
-  }
-
+ 
   type Product {
     _id: ID
     name: String
     description: String
     image: String
-    quantity: Int
     price: Float
-    category: Category
+    sku: Int
   }
 
   type Order {
@@ -44,8 +39,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    categories: [Category]
-    products(category: ID, name: String): [Product]
+    products(name: String): [Product]
     product(_id: ID!): Product
     user: User
     order(_id: ID!): Order
