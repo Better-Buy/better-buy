@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const URI = process.env.MONGODB_URL;
 
-mongoose.connect(URI || 'mongodb://localhost/mernshopping', {
+mongoose.connect(URI || 'mongodb://localhost/better-buy', {
 useNewUrlParser: true, 
 
 useUnifiedTopology: true 
