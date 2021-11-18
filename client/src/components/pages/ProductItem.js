@@ -8,6 +8,9 @@ import AlsoViewed from '../layout/AlsoViewed'
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import { useMutation } from '@apollo/client';
+import { ADD_PRODUCT } from '../../utils/mutations';
+
 
 
 export default function ProductItem() {
@@ -20,16 +23,40 @@ export default function ProductItem() {
     const [items, setItems] = useState([]);
 
     const [state, dispatch] = useStoreContext();
+    const [addProduct] = useMutation(ADD_PRODUCT);
 
     const name = items.name;
+    const description = items.longDescription;
     const image = items.image;
     const price = items.regularPrice;
 
-    const item = {sku, name, image, price}
+    
+    const item = {name, description, image, price, sku}
+    console.log(item);
    
     const { cart } = state
 
-    const addToCart = () => {
+    const onClick = (event) => {
+      event.preventDefault();
+      addProductToDatabase();
+      addToCart();
+    }
+
+
+   async function addProductToDatabase(){
+     const mutationResponse = await addProduct({
+      variables: {
+        name: name,
+        description: description,
+        image: image,
+        price: price,
+        sku: parseInt(sku),
+      }
+    });
+    return mutationResponse;
+    }
+
+    function addToCart() {
       const itemInCart = cart.find((cartItem) => cartItem.sku === sku)
       if (itemInCart) {
         dispatch({
@@ -115,7 +142,7 @@ export default function ProductItem() {
            <Grid  item className="item-description" lg={10} mt={5}>{items.longDescription}</Grid>
            <Grid container item justifyContent="center" alignItems="center" direction="column" lg={5}>
            <Grid className="item-price" item lg={6} mb={2} mt={5}>${price}</Grid>
-           <Grid  item className="add-item-buttom" lg={6} mb={8}><Button variant="contained" size="large" style={{backgroundColor: '#FFB75A' , color: '#0b3278', fontFamily: 'now bold'}} className="add-item-buttom" onClick={addToCart}>add to cart</Button></Grid>
+           <Grid  item className="add-item-buttom" lg={6} mb={8}><Button variant="contained" size="large" style={{backgroundColor: '#FFB75A' , color: '#0b3278', fontFamily: 'now bold'}} className="add-item-buttom" onClick={onClick}>add to cart</Button></Grid>
            </Grid>
            </Grid>
            <AlsoViewed sku={items.sku} />
