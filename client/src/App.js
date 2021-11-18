@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import './App.css';
-
+import 'react-toastify/dist/ReactToastify.css'
+import {ToastContainer} from 'react-toastify'
 
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/layout/Navbar';
@@ -59,6 +60,7 @@ function App() {
       > 
 
         <Router>
+          <ToastContainer />
           <Fragment className="App">
           <StoreProvider>
             <Navbar />

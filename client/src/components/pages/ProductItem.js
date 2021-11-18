@@ -10,6 +10,7 @@ import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../../utils/mutations';
+import {toast} from 'react-toastify'
 
 
 
@@ -68,11 +69,17 @@ export default function ProductItem() {
           ...itemInCart,
           purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
         });
+        toast.info("Increased item quantity", {
+          position: "bottom-left",
+        })
       } else {
         dispatch({
           type: ADD_TO_CART,
           product: { ...item, purchaseQuantity: 1 }
         });
+        toast.success("Item added to cart", {
+          position: "bottom-left",
+        })
         idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
       }
     }
