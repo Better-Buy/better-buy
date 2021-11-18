@@ -91,7 +91,8 @@ const resolvers = {
       return { token, user };
     },
     addProduct: async (parent, args) => {
-      const product = await Product.create(args);
+      console.log(args)
+      const product = await Product.updateOne({_id: args._id}, {$set: {args}}, {upsert:true});
       return product;
     },
     addOrder: async (parent, { products }, context) => {

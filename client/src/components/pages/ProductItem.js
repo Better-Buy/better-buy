@@ -50,7 +50,7 @@ export default function ProductItem() {
         description: description,
         image: image,
         price: price,
-        sku: parseInt(sku),
+        _id: parseInt(sku),
       }
     });
     return mutationResponse;

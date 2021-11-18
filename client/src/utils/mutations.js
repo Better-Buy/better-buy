@@ -42,19 +42,19 @@ export const ADD_PRODUCT = gql`
   $description: String
   $image: String
   $price: Float!
-  $sku: Int!
+  $_id: ID!
 ){
   addProduct(
     name: $name
   description: $description
   image: $image
   price: $price
-  sku: $sku){
+  _id: $_id){
     name
     description
     image
     price
-    sku
+    _id
   }
 }
 `;
