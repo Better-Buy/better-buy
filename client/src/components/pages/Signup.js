@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import Auth from '../../utils/auth';
-import { ADD_USER } from '../../utils/mutations';
+import { useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { ADD_USER } from "../../utils/mutations";
+import { removeArgumentsFromDocument } from "@apollo/client/utilities";
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -31,14 +32,15 @@ function Signup(props) {
   };
 
   return (
-    <div className='form-container'>
+    <div className="form-container">
       <h1>
-          Account <span className="text-primary">Register</span>
+        Account <span className="text-primary">Register</span>
       </h1>
       <form onSubmit={handleFormSubmit}>
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
-          <input className="name-text-field"
+          <input
+            className="name-text-field"
             placeholder="First"
             name="firstName"
             type="firstName"
@@ -48,7 +50,8 @@ function Signup(props) {
         </div>
         <div className="form-group">
           <label htmlFor="lastName">Last Name:</label>
-          <input className="name-text-field"
+          <input
+            className="name-text-field"
             placeholder="Last"
             name="lastName"
             type="lastName"
@@ -58,7 +61,8 @@ function Signup(props) {
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
-          <input className="name-text-field"
+          <input
+            className="name-text-field"
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -68,7 +72,8 @@ function Signup(props) {
         </div>
         <div className="form-group">
           <label htmlFor="pwd">Password:</label>
-          <input className="name-text-field"
+          <input
+            className="name-text-field"
             placeholder="******"
             name="password"
             type="password"
@@ -76,7 +81,11 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <input type="submit" value="register" className="btn btn-primary btn-block"/>
+        <input
+          type="submit"
+          value="register"
+          className="btn btn-primary btn-block"
+        />
       </form>
     </div>
   );

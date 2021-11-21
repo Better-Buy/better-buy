@@ -4,7 +4,8 @@ import {
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
-  CLEAR_CART
+  CLEAR_CART,
+  SET_SEARCH_VALUE
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -52,6 +53,12 @@ export const reducer = (state, action) => {
         cartOpen: false,
         cart: []
       };
+
+      case SET_SEARCH_VALUE:
+        return {
+          ...state,
+          [action.field]: action.payload,
+        };
 
     default:
       return state;
