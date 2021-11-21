@@ -31,66 +31,60 @@
   --primary: #0b3278;
   --secondary: #9bb0d2;
   --tertiary: #f2f5ff;
-  --quaternary: #FFB75A;
+  --quaternary: #ffb75a;
   --dark-color: #333333;
   --danger-color: #dc3545;
   --success-color: #28a745;
-  
 }
 
 @font-face {
   font-family: 'Now Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Now Regular'), url('./assets/fonts/Now-Regular.woff') format('woff');
-  }
-  
+  src: local('Now Regular'),
+    url('./assets/fonts/Now-Regular.woff') format('woff');
+}
 
-  @font-face {
+@font-face {
   font-family: 'Now Thin';
   font-style: normal;
   font-weight: normal;
   src: local('Now Thin'), url('./assets/fonts/Now-Thin.woff') format('woff');
-  }
-  
+}
 
-  @font-face {
+@font-face {
   font-family: 'Now Light';
   font-style: normal;
   font-weight: normal;
   src: local('Now Light'), url('./assets/fonts/Now-Light.woff') format('woff');
-  }
-  
+}
 
-  @font-face {
+@font-face {
   font-family: 'Now Medium';
   font-style: normal;
   font-weight: normal;
   src: local('Now Medium'), url('./assets/fonts/Now-Medium.woff') format('woff');
-  }
-  
+}
 
-  @font-face {
+@font-face {
   font-family: 'Now Bold';
   font-style: normal;
   font-weight: normal;
   src: local('Now Bold'), url('./assets/fonts/Now-Bold.woff') format('woff');
-  }
-  
+}
 
-  @font-face {
+@font-face {
   font-family: 'Now Black';
   font-style: normal;
   font-weight: normal;
   src: local('Now Black'), url('./assets/fonts/Now-Black.woff') format('woff');
-  }
+}
 
-  @font-face {
-    font-family: 'aileronregular';
-    src: url('./assets/fonts/Aileron-Regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+@font-face {
+  font-family: 'aileronregular';
+  src: url('./assets/fonts/Aileron-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -103,7 +97,6 @@
 /* original */
 
 body {
-  
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -127,6 +120,7 @@ img {
 /* Utilities */
 .container {
   max-width: 1400px;
+  min-height: 75vh;
   margin: auto;
   overflow: hidden;
 }
@@ -135,7 +129,6 @@ img {
 .x-large {
   font-size: 4rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
 }
 
 .large {
@@ -419,7 +412,6 @@ button {
   overflow: hidden;
   padding: 0 2rem;
   box-shadow: 2.5px 2.5px 10px var(--dark-color);
-  
 }
 
 .form-container h1,
