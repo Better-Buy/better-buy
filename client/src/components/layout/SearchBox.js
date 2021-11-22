@@ -6,23 +6,13 @@ import { useStoreContext } from '../../utils/GlobalState'
 import { SET_SEARCH_VALUE } from '../../utils/actions'
 
 export default function SearchBox() {
-  const [state, dispatch] = useStoreContext()
-
-  const handleTextChange = (e) => {
-    dispatch({
-      type: SET_SEARCH_VALUE,
-      field: e.target.name,
-      payload: e.target.value,
-    })
-  }
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault()
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
     window.location.assign('/search')
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form>
       <Box className="search" sx={{ display: 'flex', alignItems: 'flex-end' }}>
         <SearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
         <TextField
@@ -31,7 +21,7 @@ export default function SearchBox() {
           variant="standard"
           size="small"
           name="searchField"
-          onChange={(e) => handleTextChange(e)}
+          onSubmit={(e) => handleFormSubmit(e)}
         />
       </Box>
     </form>

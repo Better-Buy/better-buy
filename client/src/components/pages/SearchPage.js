@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import ProductList from '../layout/ProductList'
 import { Grid } from '@mui/material'
 import { useStoreContext } from '../../utils/GlobalState'
+import { useLocation } from 'react-router-dom'
+import queryString from 'query-string'
 import Search from '@mui/icons-material/Search'
 
 export default function SearchPage() {
-  const [state] = useStoreContext()
-  const { searchField } = state
-
+  const { search } = useLocation()
+  const { searchField } = queryString.parse(search)
   console.log(searchField)
 
   const API_KEY = process.env.REACT_APP_API_KEY
