@@ -11,6 +11,7 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
+import SearchPage from './components/pages/SearchPage'
 // import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context'
 
@@ -27,7 +28,9 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
+
 } from '@apollo/client'
+
 
 const stripePromise = loadStripe(
   'pk_test_51Jq4qZGzUjXx6ZT6RJDT6629lmeCT3QuFPg4JrDbQML31wlbTIKlZhRRvaYQBuiHFDI5jGbA36gPCadnZ1SgcCGk00rncH3LQT'
@@ -63,24 +66,26 @@ function App() {
         <Router>
           <ToastContainer />
           <Fragment className="App">
-            <StoreProvider>
-              <Navbar />
-              <Toaster position="bottom-center" />
-              <SearchBar />
-              <div className="container">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  {/* Amir path to Home will direct to login page if not logged in*/}
-                  {/* <PrivateRoute exact path='/' component={Home} />               */}
-                  <Route exact path="/Products" component={Products} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/signup" component={Signup} />
-                  <Route exact path="/about" component={About} />
-                  showNavigation();
-                  <Route exact path="/products/:sku" component={ProductItem} />
-                </Switch>
-              </div>
-              <Footer />
+
+          <StoreProvider>
+            <Navbar />
+            <Toaster position="bottom-center"/>
+            <SearchBar />
+            <div className='container'>
+              <Switch>
+                 <Route exact path='/' component={Home} />
+                {/* Amir path to Home will direct to login page if not logged in*/}
+                {/* <PrivateRoute exact path='/' component={Home} />               */}
+                <Route exact path='/Products' component={Products} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/about' component={About} />
+                <Route exact path='/search' component={SearchPage} />
+                showNavigation();
+                <Route exact path='/products/:sku' component={ProductItem} />
+              </Switch>
+            </div>
+
             </StoreProvider>
           </Fragment>
         </Router>
