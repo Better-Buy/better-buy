@@ -6,9 +6,8 @@ import { useStoreContext } from '../../utils/GlobalState'
 import { SET_SEARCH_VALUE } from '../../utils/actions'
 
 export default function SearchBox() {
-  const handleFormSubmit = (e) => {
+  const setSearchField = (e) => {
     e.preventDefault()
-    window.location.assign('/search')
   }
 
   return (
@@ -21,7 +20,7 @@ export default function SearchBox() {
           variant="standard"
           size="small"
           name="searchField"
-          onSubmit={(e) => handleFormSubmit(e)}
+          onSubmit={(e) => setSearchField(e)}
         />
       </Box>
     </form>

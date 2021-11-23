@@ -1,22 +1,22 @@
-
 .category-container {
-   padding-left: 5vw;
+  padding-left: 5vw;
+  padding-top: 2vh;
 }
 
 .search {
-    margin-bottom: 2vh;
-    padding-left: 5vh;
+  margin-bottom: 2vh;
+  padding-left: 5vh;
 }
 
 .link {
-    transition: 0.35s;
+  transition: 0.35s;
 }
 
 .link:hover {
-    color: #FFB75A;
+  color: #ffb75a;
 }
 
 .add-item-button {
-    background-color: #FFB75A;
-    color: var(--primary);
+  background-color: #ffb75a;
+  color: var(--primary);
 }

@@ -4,7 +4,7 @@ import { Grid } from '@mui/material'
 import { useStoreContext } from '../../utils/GlobalState'
 import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
-import Search from '@mui/icons-material/Search'
+import SearchBox from '../layout/SearchBox'
 
 export default function SearchPage() {
   const { search } = useLocation()
@@ -50,27 +50,31 @@ export default function SearchPage() {
   } else {
     return (
       <div>
-        <h1 className="category-name">{searchField}</h1>
-        <Grid
-          container
-          justifyContent="space-around"
-          justifyItems="center"
-          direction="row"
-          alignItems="stretch"
-        >
-          {items.map((product) => (
-            <ProductList
-              key={product.sku}
-              sku={product.sku}
-              name={product.name}
-              price={product.regularPrice}
-              mainImage={product.image}
-              customerRating={product.customerReviewAverage}
-            />
-          ))}
+        <Grid container direction="column">
+          <Grid className="search-box" item alignSelf="flex-end">
+            <SearchBox />
+          </Grid>
+
+          <Grid
+            container
+            item
+            justifyContent="space-around"
+            justifyItems="center"
+            direction="row"
+            alignItems="stretch"
+          >
+            {items.map((product) => (
+              <ProductList
+                key={product.sku}
+                sku={product.sku}
+                name={product.name}
+                price={product.regularPrice}
+                mainImage={product.image}
+                customerRating={product.customerReviewAverage}
+              />
+            ))}
+          </Grid>
         </Grid>
-        {/* <AddToCart product={product} />
-        <RemoveFromCart product={product} /> */}
       </div>
     )
   }
