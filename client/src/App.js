@@ -1,56 +1,59 @@
-import React, {Fragment} from 'react';
-import './App.css';
+import React, { Fragment } from 'react'
+import './App.css'
 import 'react-toastify/dist/ReactToastify.css'
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Navbar from './components/layout/Navbar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
 import SearchBar from './components/layout/SearchBar'
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import Products from './components/pages/Products';
+import Footer from './components/layout/Footer'
+import Home from './components/pages/Home'
+import About from './components/pages/About'
+import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
 // import CreateProduct from './components/pages/CreateProduct';
-import { setContext } from '@apollo/client/link/context';
+import { setContext } from '@apollo/client/link/context'
 
 // import PrivateRoute from './components/routing/PrivateRoute';
-import { loadStripe } from '@stripe/stripe-js';
-import { CartProvider } from "use-shopping-cart";
-import { Toaster } from 'react-hot-toast';
-import { StoreProvider } from './utils/GlobalState';
-import Signup from './components/pages/Signup';
-import Login from './components/pages/Login';
+import { loadStripe } from '@stripe/stripe-js'
+import { CartProvider } from 'use-shopping-cart'
+import { Toaster } from 'react-hot-toast'
+import { StoreProvider } from './utils/GlobalState'
+import Signup from './components/pages/Signup'
+import Login from './components/pages/Login'
 
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import Search from '@mui/icons-material/Search';
 
-const stripePromise = loadStripe('pk_test_51Jq4qZGzUjXx6ZT6RJDT6629lmeCT3QuFPg4JrDbQML31wlbTIKlZhRRvaYQBuiHFDI5jGbA36gPCadnZ1SgcCGk00rncH3LQT');
+} from '@apollo/client'
+
+
+const stripePromise = loadStripe(
+  'pk_test_51Jq4qZGzUjXx6ZT6RJDT6629lmeCT3QuFPg4JrDbQML31wlbTIKlZhRRvaYQBuiHFDI5jGbA36gPCadnZ1SgcCGk00rncH3LQT'
+)
 
 const httpLink = createHttpLink({
   uri: '/graphql',
-});
+})
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem('id_token')
   return {
     headers: {
       ...headers,
       authorization: token ? `Bearer ${token}` : '',
     },
-  };
-});
+  }
+})
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
-});
-
+})
 
 function App() {
   return (
@@ -59,11 +62,11 @@ function App() {
         mode="checkout-session"
         stripe={stripePromise}
         currecty="USD"
-      > 
-
+      >
         <Router>
           <ToastContainer />
           <Fragment className="App">
+
           <StoreProvider>
             <Navbar />
             <Toaster position="bottom-center"/>
@@ -82,14 +85,13 @@ function App() {
                 <Route exact path='/products/:sku' component={ProductItem} />
               </Switch>
             </div>
+
             </StoreProvider>
           </Fragment>
         </Router>
-
-
       </CartProvider>
-   </ApolloProvider>
-  );
+    </ApolloProvider>
+  )
 }
 
-export default App;
+export default App
