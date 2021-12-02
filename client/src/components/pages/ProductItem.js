@@ -141,9 +141,16 @@ export default function ProductItem() {
               <ProductRating customerRating={items.customerReviewAverage} />
               &nbsp;
               <span className="average-rating">
-                {items.customerReviewAverage}
+                {items.customerReviewAverage
+                  ? items.customerReviewAverage
+                  : 'no reviews'}
               </span>
-              &nbsp;({items.customerReviewCount}&nbsp;Reviews)
+              &nbsp;
+              {items.customerReviewCount ? (
+                <span>({items.customerReviewCount}&nbsp;Reviews)</span>
+              ) : (
+                ''
+              )}
             </Grid>
             <Grid item>
               <span className="span">Model:</span>
