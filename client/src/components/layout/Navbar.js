@@ -50,7 +50,6 @@ export default function Navbar() {
           <Link className="login-link" to="/login">
             Login
           </Link>
-          <Link to="/search">Search</Link>
         </Grid>
       )
     }
