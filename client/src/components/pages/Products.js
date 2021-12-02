@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import './Products.css'
 import ProductList from '../layout/ProductList'
+import Loader from '../layout/Loader'
+import Message from '../layout/Message'
 // import formatProductPrice from "../../utils/Productprice"
 
 export default function Products() {
@@ -68,9 +70,9 @@ export default function Products() {
   }, [item])
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <Message variant="error">{error.message}</Message>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <Loader />
   } else {
     return (
       <div>

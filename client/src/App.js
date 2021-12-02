@@ -8,7 +8,6 @@ import Navbar from './components/layout/Navbar'
 import SearchBar from './components/layout/SearchBar'
 import Footer from './components/layout/Footer'
 import Home from './components/pages/Home'
-import About from './components/pages/About'
 import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
@@ -76,7 +75,6 @@ function App() {
                   <Route exact path="/Products" component={Products} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
-                  <Route exact path="/about" component={About} />
                   <Route exact path="/search" component={SearchPage} />
                   showNavigation();
                   <Route exact path="/products/:sku" component={ProductItem} />

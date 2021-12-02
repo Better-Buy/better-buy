@@ -5,6 +5,8 @@ import { useStoreContext } from '../../utils/GlobalState'
 import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import SearchBox from '../layout/SearchBox'
+import Loader from '../layout/Loader'
+import Message from '../layout/Message'
 
 export default function SearchPage() {
   const { search } = useLocation()
@@ -44,9 +46,9 @@ export default function SearchPage() {
   }, [searchField])
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <Message variant="error">{error.message}</Message>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <Loader />
   } else {
     return (
       <div>

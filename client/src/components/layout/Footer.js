@@ -1,8 +1,18 @@
 import React from 'react'
-import './Footer.css'
 
 const Footer = () => {
-  return <div className="footer">Copyright &copy; Better Buy</div>
+  return (
+    <div
+      style={{
+        textAlign: 'center',
+        padding: '1.5vh 0vw',
+        color: 'var(--primary)',
+      }}
+      className="footer"
+    >
+      Copyright &copy; Better Buy
+    </div>
+  )
 }
 
 export default Footer
