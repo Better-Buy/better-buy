@@ -192,9 +192,10 @@ export default function ProductItem() {
             justifyContent="center"
             alignItems="center"
             direction="row"
+            align="center"
             lg={5}
           >
-            <Grid item className="item-description" lg={10} mt={5}>
+            <Grid item className="item-description" lg={8} mt={5}>
               {items.longDescription}
             </Grid>
             <Grid

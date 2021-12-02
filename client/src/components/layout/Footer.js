@@ -7,6 +7,7 @@ const Footer = () => {
         textAlign: 'center',
         padding: '1.5vh 0vw',
         color: 'var(--primary)',
+        marginTop: '15vh',
       }}
       className="footer"
     >

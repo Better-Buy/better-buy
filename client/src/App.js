@@ -11,6 +11,7 @@ import Home from './components/pages/Home'
 import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
+import Cart from './components/pages/Cart'
 // import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context'
 
@@ -76,7 +77,7 @@ function App() {
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/signup" component={Signup} />
                   <Route exact path="/search" component={SearchPage} />
-                  showNavigation();
+                  <Route exact path="/cart" component={Cart} />
                   <Route exact path="/products/:sku" component={ProductItem} />
                 </Switch>
               </div>

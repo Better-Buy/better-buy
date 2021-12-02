@@ -16,7 +16,6 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
       alignItems="center"
       className="pagination"
       style={{
-        marginBottom: '15vh',
         marginTop: '2vh',
       }}
     >

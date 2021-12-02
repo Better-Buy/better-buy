@@ -6,6 +6,7 @@ const Loader = () => {
   return (
     <Grid container justifyContent="center" alignItems="flex-end">
       <CircularProgress style={{ marginTop: '25vh' }} />
+      &nbsp;
       <span>Loading...</span>
     </Grid>
   )
