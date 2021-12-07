@@ -1,0 +1,21 @@
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-header {
+  text-align: center;
+  font-size: 39.81px;
+  color: var(--primary);
+  margin-top: 8vh;
+  margin-bottom: 2vh;
+}
+
+.cart-price {
+  color: var(--primary);
+}
+
+.cart-product-name {
+  font-size: 12px;
+}

@@ -46,6 +46,9 @@ export default function SearchBar() {
             Desktops
           </Link>
         </Grid>
+        <Grid item>
+          <Link to="/search">Search</Link>
+        </Grid>
       </Grid>
     </Grid>
   )

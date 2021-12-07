@@ -1,8 +1,18 @@
 import React from 'react'
-import './Footer.css'
 
 const Footer = () => {
-  return <div className="footer">Copyright &copy; Better Buy</div>
+  return (
+    <div
+      style={{
+        color: 'var(--primary)',
+        position: 'absolute',
+        bottom: '0',
+        left: '42vw',
+      }}
+    >
+      Copyright &copy; Better Buy
+    </div>
+  )
 }
 
 export default Footer

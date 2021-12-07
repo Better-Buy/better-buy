@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+/*import { useReducer } from "react";
 import {
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
@@ -67,4 +67,4 @@ export const reducer = (state, action) => {
 
 export function useProductReducer(initialState) {
   return useReducer(reducer, initialState)
-}
+}*/

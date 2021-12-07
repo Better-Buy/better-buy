@@ -1,40 +1,40 @@
-.item-main-image, .item-alternate-image {
-    width: 22vw;
+.item-main-image,
+.item-alternate-image {
+  width: 22vw;
 }
 
 .manufacturer {
-    font-size: 27.65px;
-    color: var(--primary);
+  font-size: 27.65px;
+  color: var(--primary);
 }
 
 .item-name {
-    font-size: 19.20px;
+  font-size: 19.2px;
 }
 
 .span {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .item-description {
-    color: var(--primary);
-    font-size: 16.00px;
+  color: var(--primary);
+  font-size: 19.2px;
 }
 
 .average-rating {
-    font-size: 19.20px;
-    color: var(--primary);
-   
+  font-size: 19.2px;
+  color: var(--primary);
 }
 
 .add-item-button {
-    width: 100%;
+  width: 100%;
 }
 
 .item-review {
-    color: var(--dark-color);
+  color: var(--dark-color);
 }
 
 .item-price {
-    font-size: 27.65px;
-    color: black;
+  font-size: 27.65px;
+  color: black;
 }

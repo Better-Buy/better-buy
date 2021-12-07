@@ -8,10 +8,10 @@ import Navbar from './components/layout/Navbar'
 import SearchBar from './components/layout/SearchBar'
 import Footer from './components/layout/Footer'
 import Home from './components/pages/Home'
-import About from './components/pages/About'
 import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
+import Cart from './components/pages/Cart'
 // import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context'
 
@@ -19,7 +19,7 @@ import { setContext } from '@apollo/client/link/context'
 import { loadStripe } from '@stripe/stripe-js'
 import { CartProvider } from 'use-shopping-cart'
 import { Toaster } from 'react-hot-toast'
-import { StoreProvider } from './utils/GlobalState'
+//import { StoreProvider } from './utils/GlobalState'
 import Signup from './components/pages/Signup'
 import Login from './components/pages/Login'
 
@@ -63,28 +63,25 @@ function App() {
       >
         <Router>
           <ToastContainer />
-          <Fragment className="App">
-            <StoreProvider>
-              <Navbar />
-              <Toaster position="bottom-center" />
-              <SearchBar />
-              <div className="container">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  {/* Amir path to Home will direct to login page if not logged in*/}
-                  {/* <PrivateRoute exact path='/' component={Home} />               */}
-                  <Route exact path="/Products" component={Products} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/signup" component={Signup} />
-                  <Route exact path="/about" component={About} />
-                  <Route exact path="/search" component={SearchPage} />
-                  showNavigation();
-                  <Route exact path="/products/:sku" component={ProductItem} />
-                </Switch>
-              </div>
-              <Footer />
-            </StoreProvider>
-          </Fragment>
+          <div className="App">
+            <Navbar />
+            <Toaster position="bottom-center" />
+            <SearchBar />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                {/* Amir path to Home will direct to login page if not logged in*/}
+                {/* <PrivateRoute exact path='/' component={Home} />               */}
+                <Route exact path="/Products" component={Products} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/search" component={SearchPage} />
+                <Route exact path="/cart" component={Cart} />
+                <Route exact path="/products/:sku" component={ProductItem} />
+              </Switch>
+            </div>
+            <Footer />
+          </div>
         </Router>
       </CartProvider>
     </ApolloProvider>

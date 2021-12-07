@@ -5,6 +5,9 @@ import { useStoreContext } from '../../utils/GlobalState'
 import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import SearchBox from '../layout/SearchBox'
+import Pagination from '../layout/Pagination'
+import Loader from '../layout/Loader'
+import Message from '../layout/Message'
 
 export default function SearchPage() {
   const { search } = useLocation()
@@ -16,6 +19,8 @@ export default function SearchPage() {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [items, setItems] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(9)
 
   useEffect(() => {
     fetch(
@@ -23,7 +28,7 @@ export default function SearchPage() {
         searchField +
         '))?apiKey=' +
         API_KEY +
-        '&pageSize=16&format=json'
+        '&pageSize=90&format=json'
     )
       .then((res) => res.json())
       .then(
@@ -43,10 +48,18 @@ export default function SearchPage() {
       )
   }, [searchField])
 
+  //Get current items
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem)
+
+  //Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <Message variant="error">{error.message}</Message>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <Loader />
   } else {
     return (
       <div>
@@ -63,7 +76,7 @@ export default function SearchPage() {
             direction="row"
             alignItems="stretch"
           >
-            {items.map((product) => (
+            {currentItems.map((product) => (
               <ProductList
                 key={product.sku}
                 sku={product.sku}
@@ -74,6 +87,11 @@ export default function SearchPage() {
               />
             ))}
           </Grid>
+          <Pagination
+            itemsPerPage={itemsPerPage}
+            totalItems={items.length}
+            paginate={paginate}
+          />
         </Grid>
       </div>
     )

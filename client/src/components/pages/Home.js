@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Loader from '../layout/Loader'
+import Message from '../layout/Message'
 import ProductList from '../layout/ProductList'
 import CarouselImages from '../layout/CarouselImages'
 import { Grid } from '@mui/material'
@@ -15,7 +17,7 @@ const Home = () => {
     fetch(
       'https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=' +
         API_KEY +
-        '&pageSize=16&format=json'
+        '&pageSize=100&format=json'
     )
       .then((res) => res.json())
       .then(
@@ -36,9 +38,9 @@ const Home = () => {
   }, [])
 
   if (error) {
-    return <div>Error: {error.message}</div>
+    return <Message variant="error">{error.message}</Message>
   } else if (!isLoaded) {
-    return <div>Loading...</div>
+    return <Loader />
   } else {
     return (
       <div>
