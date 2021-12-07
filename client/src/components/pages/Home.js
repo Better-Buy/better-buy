@@ -17,7 +17,7 @@ const Home = () => {
     fetch(
       'https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=' +
         API_KEY +
-        '&pageSize=10&format=json'
+        '&pageSize=100&format=json'
     )
       .then((res) => res.json())
       .then(

@@ -17,6 +17,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
       className="pagination"
       style={{
         marginTop: '2vh',
+        marginBottom: '15vh',
       }}
     >
       {pageNumbers.map((number) => (

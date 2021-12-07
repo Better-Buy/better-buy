@@ -71,7 +71,11 @@ export default function AlsoViewed(props) {
     return <Loader />
   } else {
     return (
-      <div>
+      <div
+        style={{
+          marginBottom: '8vh',
+        }}
+      >
         <p className="also-viewed">Customers Also Viewed</p>
         <Grid container justifyContent="space-around">
           <AlsoViewedProductList

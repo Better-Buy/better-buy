@@ -4,12 +4,11 @@ const Footer = () => {
   return (
     <div
       style={{
-        textAlign: 'center',
-        padding: '1.5vh 0vw',
         color: 'var(--primary)',
-        marginTop: '15vh',
+        position: 'absolute',
+        bottom: '0',
+        left: '42vw',
       }}
-      className="footer"
     >
       Copyright &copy; Better Buy
     </div>

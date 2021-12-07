@@ -6,14 +6,10 @@ import Logo from '../../assets/img/Logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Auth from '../../utils/auth'
-import { useStoreContext } from '../../utils/GlobalState'
 
 const shoppingCart = <FontAwesomeIcon icon={faShoppingCart} />
 
 export default function Navbar() {
-  const [state] = useStoreContext()
-  const { cart } = state
-
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -31,7 +27,6 @@ export default function Navbar() {
             Logout
           </a>
           <Link to="/cart">{shoppingCart}</Link>
-          <p>{cart.length}</p>
         </Grid>
       )
     } else {

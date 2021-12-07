@@ -5,7 +5,9 @@ import './ProductItem.css'
 import { useParams } from 'react-router'
 import ProductRating from '../layout/ProductRating'
 import AlsoViewed from '../layout/AlsoViewed'
-import { useStoreContext } from '../../utils/GlobalState'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../actions/cartActions'
+//import { useStoreContext } from '../../utils/GlobalState'
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions'
 import { idbPromise } from '../../utils/helpers'
 import { useMutation } from '@apollo/client'
@@ -23,23 +25,26 @@ export default function ProductItem() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [items, setItems] = useState([])
 
-  const [state, dispatch] = useStoreContext()
+  // const [state, dispatch] = useStoreContext()
   const [addProduct] = useMutation(ADD_PRODUCT)
+
+  const dispatch = useDispatch()
 
   const name = items.name
   const description = items.longDescription
   const image = items.image
   const price = items.regularPrice
+  const qty = 1
 
-  const item = { name, description, image, price, sku }
+  let item = { name, description, image, price, sku }
   console.log(item)
 
-  const { cart } = state
+  // const { cart } = state
 
-  const onClick = (event) => {
+  const addItem = (event) => {
     event.preventDefault()
     addProductToDatabase()
-    addToCart()
+    dispatch(addToCart(item, qty))
   }
 
   async function addProductToDatabase() {
@@ -55,7 +60,7 @@ export default function ProductItem() {
     return mutationResponse
   }
 
-  function addToCart() {
+  /* function addToCart() {
     const itemInCart = cart.find((cartItem) => cartItem.sku === sku)
     if (itemInCart) {
       dispatch({
@@ -81,7 +86,7 @@ export default function ProductItem() {
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 })
     }
   }
-
+*/
   useEffect(() => {
     fetch(
       'https://api.bestbuy.com/v1/products((search=' +
@@ -219,7 +224,7 @@ export default function ProductItem() {
                     fontFamily: 'now bold',
                   }}
                   className="add-item-buttom"
-                  onClick={onClick}
+                  onClick={addItem}
                 >
                   add to cart
                 </Button>
