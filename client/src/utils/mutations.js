@@ -1,8 +1,8 @@
-import { gql } from '@apollo/client';
-//original poster 
-//ADD USER ID TO POST. MUST KNOW POSTER. 
+import { gql } from '@apollo/client'
+//original poster
+//ADD USER ID TO POST. MUST KNOW POSTER.
 
-//adding backend for adding user. 
+//adding backend for adding user.
 export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
@@ -22,7 +22,7 @@ export const ADD_USER = gql`
       }
     }
   }
-`;
+`
 
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -30,31 +30,34 @@ export const LOGIN = gql`
       token
       user {
         _id
+        firstName
+        lastName
+        email
       }
     }
   }
-`;
-
+`
 
 export const ADD_PRODUCT = gql`
   mutation addProduct(
-  $name: String!
-  $description: String
-  $image: String
-  $price: Float!
-  $_id: ID!
-){
-  addProduct(
-    name: $name
-  description: $description
-  image: $image
-  price: $price
-  _id: $_id){
-    name
-    description
-    image
-    price
-    _id
+    $name: String!
+    $description: String
+    $image: String
+    $price: Float!
+    $_id: ID!
+  ) {
+    addProduct(
+      name: $name
+      description: $description
+      image: $image
+      price: $price
+      _id: $_id
+    ) {
+      name
+      description
+      image
+      price
+      _id
+    }
   }
-}
-`;
+`

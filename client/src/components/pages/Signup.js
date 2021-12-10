@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-// import { Link } from 'react-router-dom';
-import { useMutation } from "@apollo/client";
-import Auth from "../../utils/auth";
-import { ADD_USER } from "../../utils/mutations";
-import { removeArgumentsFromDocument } from "@apollo/client/utilities";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useMutation } from '@apollo/client'
+import Auth from '../../utils/auth'
+import { ADD_USER } from '../../utils/mutations'
+import { removeArgumentsFromDocument } from '@apollo/client/utilities'
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
-  const [addUser] = useMutation(ADD_USER);
+  const [formState, setFormState] = useState({ email: '', password: '' })
+  const [addUser] = useMutation(ADD_USER)
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -18,18 +18,18 @@ function Signup(props) {
         firstName: formState.firstName,
         lastName: formState.lastName,
       },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-  };
+    })
+    const token = mutationResponse.data.addUser.token
+    Auth.login(token)
+  }
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setFormState({
       ...formState,
       [name]: value,
-    });
-  };
+    })
+  }
 
   return (
     <div className="form-container">
@@ -86,9 +86,23 @@ function Signup(props) {
           value="register"
           className="btn btn-primary btn-block"
         />
+        <p>
+          Already a member?&nbsp;
+          <Link
+            style={{
+              background:
+                '-webkit-linear-gradient(right,#FFB75A, var(--primary))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+            to="/login"
+          >
+            Sign up
+          </Link>
+        </p>
       </form>
     </div>
-  );
+  )
 }
 
-export default Signup;
+export default Signup
