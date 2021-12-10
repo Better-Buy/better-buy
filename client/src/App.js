@@ -12,6 +12,7 @@ import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
 import Cart from './components/pages/Cart'
+import Shipping from './components/pages/Shipping'
 // import CreateProduct from './components/pages/CreateProduct';
 import { setContext } from '@apollo/client/link/context'
 
@@ -20,7 +21,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { CartProvider } from 'use-shopping-cart'
 import { Toaster } from 'react-hot-toast'
 //import { StoreProvider } from './utils/GlobalState'
-import Signup from './components/pages/Signup'
+import Register from './components/pages/Register'
 import Login from './components/pages/Login'
 
 import {
@@ -74,8 +75,9 @@ function App() {
                 {/* <PrivateRoute exact path='/' component={Home} />               */}
                 <Route exact path="/Products" component={Products} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/register" component={Register} />
                 <Route exact path="/search" component={SearchPage} />
+                <Route exact path="/shipping" component={Shipping} />
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/products/:sku" component={ProductItem} />
               </Switch>

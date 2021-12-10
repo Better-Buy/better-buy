@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const userLoginAction = userLogin
 
-function Login(location, history) {
+function Login(history) {
   const [formState, setFormState] = useState({ email: '', password: '' })
   const [login, { error }] = useMutation(LOGIN)
 
@@ -19,7 +19,9 @@ function Login(location, history) {
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, userInfo } = userLogin
 
-  const redirect = location.search ? location.search.split('=')[1] : '/'
+  const redirect = window.location.search
+    ? window.location.search.split('=')[1]
+    : '/'
 
   useEffect(() => {
     if (userInfo) {
@@ -36,7 +38,6 @@ function Login(location, history) {
       const user = mutationResponse.data.login.user
       const token = mutationResponse.data.login.token
       const userData = { ...user, token }
-      console.log(user)
       dispatch(userLoginAction(userData))
       Auth.login(token)
     } catch (e) {
@@ -94,7 +95,7 @@ function Login(location, history) {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
-            to="/signup"
+            to={redirect ? `/register?redirect=${redirect}` : '/register'}
           >
             Register
           </Link>

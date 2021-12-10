@@ -13,6 +13,8 @@ import {
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import Badge from '@mui/material/Badge'
+import { styled } from '@mui/material/styles'
 import Auth from '../../utils/auth'
 import { logout } from '../../actions/userActions'
 
@@ -20,9 +22,20 @@ const shoppingCart = <FontAwesomeIcon icon={faShoppingCart} />
 const user = <FontAwesomeIcon icon={faUser} />
 const caret = <FontAwesomeIcon icon={faCaretDown} />
 
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 3,
+    color: '#0b3278',
+    background: '#FFB75A',
+  },
+}))
+
 export default function Navbar() {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
 
   const dispatch = useDispatch()
 
@@ -64,7 +77,17 @@ export default function Navbar() {
                 },
               }}
             >
-              <Link to="/cart">Cart{shoppingCart}</Link>
+              <Link to="/cart">
+                <StyledBadge
+                  badgeContent={cartItems.reduce(
+                    (acc, item) => acc + item.qty,
+                    0
+                  )}
+                  color="primary"
+                >
+                  Cart<span className="cart-icon">{shoppingCart}</span>
+                </StyledBadge>
+              </Link>
             </Button>
             <Button
               id="basic-button"
@@ -124,7 +147,17 @@ export default function Navbar() {
               },
             }}
           >
-            <Link to="/cart">Cart{shoppingCart}</Link>
+            <Link to="/cart">
+              <StyledBadge
+                badgeContent={cartItems.reduce(
+                  (acc, item) => acc + item.qty,
+                  0
+                )}
+                color="primary"
+              >
+                Cart{shoppingCart}
+              </StyledBadge>
+            </Link>
           </Button>
           <Button
             variant="text"
