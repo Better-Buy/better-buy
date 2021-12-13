@@ -1,11 +1,9 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require('apollo-server-express')
 
-
-//this is boilerplated from our ecommerce activity. 
-//This WILL change once we bring other components in. 
+//this is boilerplated from our ecommerce activity.
+//This WILL change once we bring other components in.
 
 const typeDefs = gql`
- 
   type Product {
     _id: ID
     name: String
@@ -46,13 +44,30 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addProduct(name: String!, description: String, image: String, price: Float!, _id: ID!): Product
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth
+    addProduct(
+      name: String!
+      description: String
+      image: String
+      price: Float!
+      _id: ID!
+    ): Product
     addOrder(products: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateUser(
+      _id: ID!
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+    ): Auth
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
-`;
+`
 
-module.exports = typeDefs;
+module.exports = typeDefs
