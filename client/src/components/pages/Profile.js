@@ -79,7 +79,6 @@ const Profile = ({ location, history }) => {
 
   return (
     <div>
-      <h1 className="profile-header">User Profile</h1>
       {message && <Message variant="error">{message}</Message>}
       {}
       {loading ? (
@@ -90,6 +89,7 @@ const Profile = ({ location, history }) => {
         <Grid container>
           <Grid item container lg={3}>
             <form>
+              <h1 className="profile-header">User Profile</h1>
               {success && <Message variant="success">Profile Updated</Message>}
               <div className="form-group">
                 <label htmlFor="firstName">First Name:</label>
