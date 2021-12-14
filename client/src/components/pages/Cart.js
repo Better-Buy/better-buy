@@ -24,7 +24,7 @@ const Cart = () => {
   }
 
   const checkoutHandler = () => {
-    history.push('/login?redirect=shipping')
+    window.location.assign('/login?redirect=shipping')
   }
 
   return (
@@ -45,7 +45,7 @@ const Cart = () => {
         </Message>
       ) : (
         <Grid container alignItems="flex-start" spacing={12}>
-          <Grid item container lg={8}>
+          <Grid item container sm={12} md={8} lg={8}>
             {cartItems.map((item) => (
               <Grid
                 item
@@ -90,6 +90,7 @@ const Cart = () => {
                     <option value="9">9</option>
                   </select>
                 </Grid>
+
                 <Grid item alignSelf="center" lg={2}>
                   <Button
                     className="remove-button"
@@ -110,6 +111,8 @@ const Cart = () => {
             direction="column"
             justifyContent="flex-start"
             alignItems="flex-start"
+            sm={12}
+            md={4}
             lg={4}
           >
             <Grid item>
@@ -135,7 +138,7 @@ const Cart = () => {
                   fontFamily: 'now bold',
                 }}
                 className="add-item-buttom"
-                onClick={checkoutHandler}
+                onClick={() => checkoutHandler()}
               >
                 Proceed to checkout
               </Button>

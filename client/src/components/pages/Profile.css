@@ -1,0 +1,28 @@
+.profile-header {
+  text-align: center;
+  font-size: 39.81px;
+  color: var(--primary);
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+
+.form-group {
+  margin: 1rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--tertiary);
+  color: #333;
+  margin: 1rem;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  display: block;
+  width: 90%;
+  background: var(--primary);
+  color: #fff;
+}
