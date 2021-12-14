@@ -34,6 +34,13 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in')
     },
+    getUser: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id)
+
+        return user
+      }
+    },
     order: async (parent, { _id }, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -112,7 +119,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in')
     },
-    updateUser: async (parent, args, context) => {
+    updateUser: async (parent, args) => {
       const user = await User.findByIdAndUpdate(args._id, args, { new: true })
       const token = signToken(user)
       return { token, user }

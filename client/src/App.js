@@ -11,6 +11,7 @@ import Home from './components/pages/Home'
 import Products from './components/pages/Products'
 import ProductItem from './components/pages/ProductItem'
 import SearchPage from './components/pages/SearchPage'
+import Profile from './components/pages/Profile'
 import Cart from './components/pages/Cart'
 import Shipping from './components/pages/Shipping'
 // import CreateProduct from './components/pages/CreateProduct';
@@ -77,6 +78,7 @@ function App() {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/search" component={SearchPage} />
+                <Route exact path="/profile" component={Profile} />
                 <Route exact path="/shipping" component={Shipping} />
                 <Route exact path="/cart" component={Cart} />
                 <Route exact path="/products/:sku" component={ProductItem} />

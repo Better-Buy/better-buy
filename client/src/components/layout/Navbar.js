@@ -115,7 +115,9 @@ export default function Navbar() {
                 'aria-labelledby': 'basic-button',
               }}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link to="/profile">Profile</Link>
+              </MenuItem>
               <MenuItem>
                 <a href="/" onClick={() => logoutHandler()}>
                   Logout
