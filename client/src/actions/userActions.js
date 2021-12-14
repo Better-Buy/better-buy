@@ -9,6 +9,9 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
+  USER_UPDATE_PROFILE_FAIL,
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_SUCCESS,
 } from '../constants/userConstants'
 
 export const userLogin = (data) => async (dispatch) => {
@@ -86,6 +89,36 @@ export const getUserDetails = (data) => async (dispatch) => {
         error.response && error.response.data.message
           ? error.response.data.message
           : error.message,
+    })
+  }
+}
+
+export const updateUserProfile = (data) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_UPDATE_PROFILE_REQUEST,
+    })
+
+    dispatch({
+      type: USER_UPDATE_PROFILE_SUCCESS,
+      payload: data,
+    })
+    dispatch({
+      type: USER_LOGIN_SUCCESS,
+      payload: data,
+    })
+    localStorage.setItem('userInfo', JSON.stringify(data))
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout())
+    }
+    dispatch({
+      type: USER_UPDATE_PROFILE_FAIL,
+      payload: message,
     })
   }
 }

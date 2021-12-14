@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './Profile.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { useQuery } from '@apollo/client'
+import { useQuery, useMutation } from '@apollo/client'
 import Message from '../layout/Message'
 import Loader from '../layout/Loader'
 import { Grid } from '@mui/material'
-import { getUserDetails } from '../../actions/userActions'
+import { getUserDetails, updateUserProfile } from '../../actions/userActions'
 import { GET_USER } from '../../utils/queries'
+import { UPDATE_USER } from '../../utils/mutations'
+import { USER_UPDATE_PROFILE_RESET } from '../../constants/userConstants'
 
 const Profile = ({ location, history }) => {
   const [firstName, setFirstName] = useState('')
@@ -16,7 +18,7 @@ const Profile = ({ location, history }) => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState(null)
   const { loading: queryLoading, data, error: queryError } = useQuery(GET_USER)
-  console.log(data)
+  const [updateUser, { error: mutationError }] = useMutation(UPDATE_USER)
 
   const dispatch = useDispatch()
 
@@ -26,12 +28,16 @@ const Profile = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
+  const { success } = userUpdateProfile
+
   useEffect(() => {
     if (!userInfo) {
       window.location.assign('/login')
     } else {
-      if (!user || !user.firstName) {
+      if (!user || !user.firstName || success) {
         try {
+          dispatch({ type: USER_UPDATE_PROFILE_RESET })
           dispatch(getUserDetails(data.user))
         } catch (e) {
           console.log(e)
@@ -42,14 +48,32 @@ const Profile = ({ location, history }) => {
         setEmail(user.email)
       }
     }
-  }, [dispatch, history, userInfo, user])
+  }, [dispatch, history, userInfo, user, success, userInfo])
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault()
+    console.log('het')
     if (password !== confirmPassword) {
       setMessage('Passwords do not match')
     } else {
-      //  dispatch(updateUserProfile({ id: user._id, name, email, password }))
+      try {
+        const mutationResponse = await updateUser({
+          variables: {
+            _id: user._id,
+            email: email,
+            password: password,
+            firstName: firstName,
+            lastName: lastName,
+          },
+        })
+
+        const person = mutationResponse.data.updateUser.user
+        const token = mutationResponse.data.updateUser.token
+        const userData = { ...person, token }
+        dispatch(updateUserProfile(userData))
+      } catch (e) {
+        console.log(e)
+      }
     }
   }
 
@@ -58,7 +82,6 @@ const Profile = ({ location, history }) => {
       <h1 className="profile-header">User Profile</h1>
       {message && <Message variant="error">{message}</Message>}
       {}
-
       {loading ? (
         <Loader />
       ) : error ? (
@@ -66,7 +89,8 @@ const Profile = ({ location, history }) => {
       ) : (
         <Grid container>
           <Grid item container lg={3}>
-            <form onSubmit={submitHandler}>
+            <form>
+              {success && <Message variant="success">Profile Updated</Message>}
               <div className="form-group">
                 <label htmlFor="firstName">First Name:</label>
                 <input
@@ -126,7 +150,12 @@ const Profile = ({ location, history }) => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
-              <input className="button" type="submit" value="Update" />
+              <input
+                className="button"
+                type="submit"
+                value="Update"
+                onClick={submitHandler}
+              />
             </form>
           </Grid>
           <Grid item container lg={9}></Grid>
