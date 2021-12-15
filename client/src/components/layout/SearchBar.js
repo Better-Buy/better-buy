@@ -47,7 +47,9 @@ export default function SearchBar() {
           </Link>
         </Grid>
         <Grid item>
-          <Link to="/search">Search</Link>
+          <Link to="/search" className="link">
+            Search
+          </Link>
         </Grid>
       </Grid>
     </Grid>

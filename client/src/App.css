@@ -285,7 +285,8 @@ img {
 
 .btn-block {
   display: block;
-  width: 100%;
+  width: 93%;
+  margin: 3vh auto 1vh auto;
 }
 
 .btn-sm {

@@ -158,7 +158,6 @@ const Profile = ({ location, history }) => {
               />
             </form>
           </Grid>
-          <Grid item container lg={9}></Grid>
         </Grid>
       )}
     </div>

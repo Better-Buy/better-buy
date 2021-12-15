@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductList from '../layout/ProductList'
 import { Grid } from '@mui/material'
-import { useStoreContext } from '../../utils/GlobalState'
 import { useLocation } from 'react-router-dom'
 import queryString from 'query-string'
 import SearchBox from '../layout/SearchBox'

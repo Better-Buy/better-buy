@@ -199,10 +199,10 @@ export default function Navbar() {
         justifyContent="flex-start"
         alignItems="Center"
       >
-        <Link to="/" item>
+        <Link to="/">
           <img className="logo" src={Logo} alt="Brand Logo"></img>
         </Link>
-        <Link to="/" item className="logo-text">
+        <Link to="/" className="logo-text">
           etter Buy
         </Link>
       </Grid>

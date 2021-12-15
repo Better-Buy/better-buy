@@ -133,14 +133,15 @@ function Register(history) {
           value="register"
           className="btn btn-primary btn-block"
         />
-        <p>
+        <p
+          style={{
+            marginLeft: '15px',
+          }}
+        >
           Already a member?&nbsp;
           <Link
             style={{
-              background:
-                '-webkit-linear-gradient(right,#FFB75A, var(--primary))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#CFA616',
             }}
             to={redirect ? `/login?redirect=${redirect}` : '/login'}
           >
