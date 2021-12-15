@@ -15,8 +15,3 @@
 .link:hover {
   color: #ffb75a;
 }
-
-.add-item-button {
-  background-color: #ffb75a;
-  color: var(--primary);
-}
