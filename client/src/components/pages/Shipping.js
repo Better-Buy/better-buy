@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Grid } from '@mui/material'
+import { saveShippingAddress } from '../../actions/cartActions'
 
 const Shipping = () => {
-  const [address, setAddress] = useState('')
-  const [city, setCity] = useState('')
-  const [postalCode, setPostalCode] = useState('')
-  const [country, setCountry] = useState('')
+  const cart = useSelector((state) => state.cart)
+  const { shippingAddress } = cart
+
+  const [address, setAddress] = useState(shippingAddress.address)
+  const [city, setCity] = useState(shippingAddress.city)
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+  const [country, setCountry] = useState(shippingAddress.country)
+
+  const dispatch = useDispatch()
 
   const submitHandler = (e) => {
+    console.log('hello')
     e.preventDefault()
-    //window.location.assign('/payment')
+    dispatch(saveShippingAddress({ address, city, postalCode, country }))
+    window.location.assign('/payment')
   }
 
   return (
     <div className="form-container">
-      <form onSubmit={(e) => submitHandler(e)}>
+      <form onSubmit={submitHandler}>
         <h1 className="profile-header">Shipping</h1>
         <div className="form-group">
           <label htmlFor="firstName">Address</label>

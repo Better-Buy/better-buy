@@ -380,6 +380,10 @@ input {
   margin: 1.2rem 0;
 }
 
+label {
+  color: var(--primary);
+}
+
 .form-text {
   display: block;
   margin-top: 0.3rem;
