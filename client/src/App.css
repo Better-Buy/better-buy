@@ -317,8 +317,8 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary);
-  color: #fff;
+  background: #ffb75a;
+  color: var(--primary);
 }
 
 .btn-light,
@@ -381,7 +381,7 @@ input {
 }
 
 label {
-  color: var(--primary);
+  color: var(--dark-color);
 }
 
 .form-text {
@@ -418,7 +418,7 @@ button {
 
 .form-container {
   max-width: 500px;
-  margin: 2rem auto;
+  margin: 8vh auto;
   overflow: hidden;
   padding: 0 2rem;
   box-shadow: 2.5px 2.5px 10px var(--dark-color);

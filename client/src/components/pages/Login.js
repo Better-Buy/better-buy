@@ -95,7 +95,7 @@ function Login(history) {
           Not a member yet?&nbsp;
           <Link
             style={{
-              color: '#CFA616',
+              color: 'var(--primary)',
             }}
             to={redirect ? `/register?redirect=${redirect}` : '/register'}
           >

@@ -141,11 +141,11 @@ function Register(history) {
           Already a member?&nbsp;
           <Link
             style={{
-              color: '#CFA616',
+              color: 'var(--primary)',
             }}
             to={redirect ? `/login?redirect=${redirect}` : '/login'}
           >
-            Sign up
+            Login
           </Link>
         </p>
       </form>

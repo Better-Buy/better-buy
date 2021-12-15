@@ -137,7 +137,6 @@ const Cart = () => {
                   color: '#0b3278',
                   fontFamily: 'now bold',
                 }}
-                className="add-item-buttom"
                 onClick={() => checkoutHandler()}
               >
                 Proceed to checkout
