@@ -103,6 +103,7 @@ export default function Products() {
               price={product.regularPrice}
               mainImage={product.image}
               customerRating={product.customerReviewAverage}
+              reviewCount={product.customerReviewCount}
             />
           ))}
         </Grid>

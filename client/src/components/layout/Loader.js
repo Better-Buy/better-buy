@@ -5,9 +5,9 @@ import CircularProgress from '@mui/material/CircularProgress'
 const Loader = () => {
   return (
     <Grid container justifyContent="center" alignItems="flex-end">
-      <CircularProgress style={{ marginTop: '25vh' }} />
+      <CircularProgress style={{ marginTop: '25vh', marginBottom: '5vh' }} />
       &nbsp;
-      <span>Loading...</span>
+      <span style={{ marginTop: '25vh', marginBottom: '5vh' }}>Loading...</span>
     </Grid>
   )
 }
