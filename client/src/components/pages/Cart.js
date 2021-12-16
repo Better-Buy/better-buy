@@ -145,6 +145,9 @@ const Cart = () => {
           </Grid>
         </Grid>
       )}
+      {cartItems.length > 5 ? (
+        <div style={{ marginBottom: '10vh' }}></div>
+      ) : null}
     </div>
   )
 }

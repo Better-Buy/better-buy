@@ -36,57 +36,54 @@ export default function AlsoViewed(props) {
   const [count3, setCount3] = useState([])
 
   useEffect(() => {
-    async function fetchMyAPI() {
-      fetch(
-        'https://api.bestbuy.com/v1/products/' +
-          sku +
-          '/alsoViewed?apiKey=' +
-          API_KEY
-      )
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            console.log(result)
-            if (result.results.length) {
-              setIsLoaded(true)
-
-              setViewed1Sku(result.results[0].sku)
-              setViewed2Sku(result.results[1].sku)
-              setViewed3Sku(result.results[3].sku)
-
-              setViewed1MainImage(result.results[0].images.standard)
-              setViewed2MainImage(result.results[1].images.standard)
-              setViewed3MainImage(result.results[3].images.standard)
-
-              setViewed1Name(result.results[0].names.title)
-              setViewed2Name(result.results[1].names.title)
-              setViewed3Name(result.results[3].names.title)
-
-              setViewed1Price(result.results[0].prices.current)
-              setViewed2Price(result.results[1].prices.current)
-              setViewed3Price(result.results[3].prices.current)
-
-              setAverageScore1(result.results[0].customerReviews.averageScore)
-              setAverageScore2(result.results[1].customerReviews.averageScore)
-              setAverageScore3(result.results[2].customerReviews.averageScore)
-
-              setCount1(result.results[0].customerReviews.count)
-              setCount2(result.results[1].customerReviews.count)
-              setCount3(result.results[2].customerReviews.count)
-            } else {
-              console.log("Data isn't being fetched.")
-            }
-          },
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
-          (error) => {
+    fetch(
+      'https://api.bestbuy.com/v1/products/' +
+        sku +
+        '/alsoViewed?apiKey=' +
+        API_KEY
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result)
+          if (result.results.length) {
             setIsLoaded(true)
-            setError(error)
+
+            setViewed1Sku(result.results[0].sku)
+            setViewed2Sku(result.results[1].sku)
+            setViewed3Sku(result.results[3].sku)
+
+            setViewed1MainImage(result.results[0].images.standard)
+            setViewed2MainImage(result.results[1].images.standard)
+            setViewed3MainImage(result.results[3].images.standard)
+
+            setViewed1Name(result.results[0].names.title)
+            setViewed2Name(result.results[1].names.title)
+            setViewed3Name(result.results[3].names.title)
+
+            setViewed1Price(result.results[0].prices.current)
+            setViewed2Price(result.results[1].prices.current)
+            setViewed3Price(result.results[3].prices.current)
+
+            setAverageScore1(result.results[0].customerReviews.averageScore)
+            setAverageScore2(result.results[1].customerReviews.averageScore)
+            setAverageScore3(result.results[2].customerReviews.averageScore)
+
+            setCount1(result.results[0].customerReviews.count)
+            setCount2(result.results[1].customerReviews.count)
+            setCount3(result.results[2].customerReviews.count)
+          } else {
+            console.log("Data isn't being fetched.")
           }
-        )
-    }
-    fetchMyAPI()
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true)
+          setError(error)
+        }
+      )
   }, [sku])
 
   if (error) {

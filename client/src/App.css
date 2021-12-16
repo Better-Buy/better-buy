@@ -27,6 +27,12 @@
   font-family: 'now bold', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  letter-spacing: 0.02rem;
+}
+
 :root {
   --primary: #0b3278;
   --secondary: #9bb0d2;
