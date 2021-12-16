@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Breadcrumb from '../layout/Breadcrumb'
+import { savePaymentMethod } from '../../actions/cartActions'
 
 const PaymentMethod = () => {
   const cart = useSelector((state) => state.cart)
@@ -16,7 +17,7 @@ const PaymentMethod = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // dispatch(savePaymentMethod(paymentMethod))
+    dispatch(savePaymentMethod(paymentMethod))
     window.location.assign('/placeorder')
   }
 
@@ -38,6 +39,17 @@ const PaymentMethod = () => {
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
             <label>Stripe</label>
+            {/*<br />
+            <input
+              type="radio"
+              label="PayPal or Credit Card"
+              id="PayPal"
+              name="paymentMethod"
+              value="PayPal"
+              checked
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            />
+            <label>Paypal or Credit Card</label>*/}
           </div>
 
           <input
