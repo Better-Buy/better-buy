@@ -100,7 +100,7 @@ const resolvers = {
       console.log(args)
       const product = await Product.updateOne(
         { _id: args._id },
-        { $set: { args } },
+        { $setOnInsert: { ...args } },
         { upsert: true }
       )
       return product

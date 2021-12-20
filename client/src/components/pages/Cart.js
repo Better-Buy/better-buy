@@ -58,7 +58,11 @@ const Cart = () => {
                 key={item.sku}
               >
                 <Grid alignSelf="center" lg={1}>
-                  <img src={item.image} alt={item.name} />
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    style={{ maxHeight: '10vh' }}
+                  />
                 </Grid>
                 <Grid
                   item

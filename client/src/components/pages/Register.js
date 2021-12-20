@@ -136,6 +136,7 @@ function Register(history) {
         <p
           style={{
             marginLeft: '15px',
+            color: 'black',
           }}
         >
           Already a member?&nbsp;

@@ -90,6 +90,7 @@ function Login(history) {
         <p
           style={{
             marginLeft: '15px',
+            color: 'black',
           }}
         >
           Not a member yet?&nbsp;

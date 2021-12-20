@@ -84,7 +84,11 @@ const PlaceOrder = () => {
                   >
                     <Grid item lg={1} m={1} ml={3}>
                       {' '}
-                      <img src={item.image} alt={item.name} />
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        style={{ maxHeight: '10vh' }}
+                      />
                     </Grid>
                     <Grid
                       container
@@ -103,7 +107,8 @@ const PlaceOrder = () => {
                         </Link>
                       </Grid>
                       <Grid item lg={4}>
-                        {item.qty} x ${item.price} = ${item.qty * item.price}
+                        {item.qty} x ${item.price} = $
+                        {Number(item.qty * item.price).toFixed(2)}
                       </Grid>
                     </Grid>
                   </Grid>
