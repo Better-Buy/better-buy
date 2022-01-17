@@ -1,6 +1,7 @@
 .item-main-image,
 .item-alternate-image {
   width: 22vw;
+  max-height: 100vh;
 }
 
 .manufacturer {

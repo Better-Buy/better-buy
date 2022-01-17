@@ -62,6 +62,7 @@ const Home = () => {
               price={product.prices.current}
               mainImage={product.images.standard}
               customerRating={product.customerReviews.averageScore}
+              reviewCount={product.customerReviews.count}
             />
           ))}
         </Grid>

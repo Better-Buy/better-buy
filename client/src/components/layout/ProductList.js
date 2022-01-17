@@ -44,6 +44,9 @@ export default function ProductList(props) {
         {props.reviewCount === null ? (
           <div style={{ color: 'var(--dark-color)' }}>No reviews</div>
         ) : null}
+        {props.reviewCount === 0 ? (
+          <div style={{ color: 'var(--dark-color)' }}>No reviews</div>
+        ) : null}
       </Link>
     </Grid>
   )
