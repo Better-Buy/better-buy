@@ -25,12 +25,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static('public'))
 
-const cors = require('cors')
+/*const cors = require('cors')
 app.use(
   cors({
     origin: '*',
   })
-)
+)*/
 // Serve up static assets, if applicable.
 /*
 app.use('/images', express.static(path.join(__dirname, '../client/images')));
