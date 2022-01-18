@@ -29,7 +29,6 @@ const cors = require('cors')
 app.use(
   cors({
     origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   })
 )
 // Serve up static assets, if applicable.
