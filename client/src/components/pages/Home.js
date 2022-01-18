@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     fetch(
-      'https://cors-anywhere.herokuapp.com/https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=' +
+      'https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=' +
         API_KEY +
         '&pageSize=100&format=json'
     )
