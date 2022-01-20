@@ -30,6 +30,11 @@
  Clone the project repo and then navigate to the root of the project in your terminal. Enter 'npm install' to install all the required dependencies. Enter 'npm run develop' to launch the project. Keep in mind that you will need a Best Buy API key for it to function. Once you have one, create a .env file on the server side and put REACT_APP_API_KEY with the API credentials.
 
 ### Built with
+- [React](https://reactjs.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express](https://expressjs.com/)
+- [Node](https://nodejs.org/en/)
+- [MaterialUI](https://mui.com/)
 
 ### Contribution
   Others should contribute by requesting permission to make additions or changes via our team organization. Alternatively, you can fork the repository and request to commit changes be reviewed through our organization. 
