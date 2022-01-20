@@ -1,0 +1,29 @@
+.shipping-container,
+.payment-method-container {
+  max-width: 500px;
+  margin: 4vh auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  box-shadow: 1px 1px 3px var(--dark-color);
+}
+
+.breadcrumb-container {
+  max-width: 500px;
+  margin: 8vh auto 0 auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  box-shadow: 1px 1px 3px var(--dark-color);
+}
+
+.active-link {
+  color: black;
+  transition: 0.35s;
+}
+
+.inactive-link {
+  color: #ccc;
+}
+
+.breadcrumb-seperator {
+  color: black;
+}
