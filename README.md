@@ -7,9 +7,8 @@
    
   ![Better-Buy-screenshot](https://user-images.githubusercontent.com/84198162/150409462-192c9e3d-3b55-4587-9cf0-bbbde5d50e61.png)
    
- ### Live website - https://better-buy-shop.herokuapp.com/
+ ## Visit live website - [Here](https://better-buy-shop.herokuapp.com/)
  
- This is [an example](http://example.com/ "Title") inline link.
 
     
 ---
