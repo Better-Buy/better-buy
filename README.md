@@ -37,6 +37,12 @@
 - [MaterialUI](https://mui.com/) - React component library
 -  [NPM](https://www.npmjs.com/) - Package manager
 
+## Credits
+* [Jorge Canto](https://github.com/jcant770)
+* [Kevin Shank](https://github.com/Bluekev22)
+* [Amir Ahmadi](https://github.com/mels065)
+* [Matt Hendrian](https://github.com/matthendrian)
+
 ### Contribution
   Others should contribute by requesting permission to make additions or changes via our team organization. Alternatively, you can fork the repository and request to commit changes be reviewed through our organization. 
 
