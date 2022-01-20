@@ -22,10 +22,8 @@ const Home = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result)
           setIsLoaded(true)
           setItems(result.results)
-          console.log(items)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
