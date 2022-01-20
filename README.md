@@ -1,5 +1,5 @@
  ### Table of Contents 
- [Prerequisites](#prerequisites) | [Installation](#installation-intstructions) | [Built with](#built-with) | [Contribution](#contribution) | [Licensing](#licensing) 
+ [Prerequisites](#prerequisites) | [Installation](#installation-intstructions) | [Tools](#built-with) | [Contribution](#contribution) | [Licensing](#licensing) 
 
 # Better Buy 
  
