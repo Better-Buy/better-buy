@@ -27,7 +27,7 @@
  
 
 ### Installation Intstructions
- Clone the project repo and then navigate to the root of the project in your terminal. Enter 'npm install' to install all the required dependencies. Enter 'npm run develop' to launch the project. Keep in mind that you will need a Best Buy API key for it to function. Once you have one, create a .env file on the server side and put REACT_APP_API_KEY with the API credentials.
+ Clone the project repo and then navigate to the root of the project in your terminal. Enter 'npm install' to install all the required dependencies. Enter 'npm run develop' to launch the project. Keep in mind that you will need a Best Buy API key for it to function. Once you have one, create a .env file on the server side and put REACT_APP_API_KEY with the API credentials into the file.
 
 ### Built with
 - [React](https://reactjs.org/) - Front end framework
