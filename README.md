@@ -7,7 +7,7 @@
   
     Better Buy is a react-app eCommerce platform that pulls live data from the top tech sellers on the web. In this version, our MVP, this information is populated through the Best Buy API and displays it in one convenient location. Although currently this is only one API, we plan to expand it to encompass a wider variety of tech, and act as a hub for tech products in general. Eventually, we hope to add a C2C component that allows verified (registered) users to post used products and sell between themselves. Our app operates using react app framework, out frontend was styled using primarily MaterialUI, Express served as our middleware, and mongoDB Atlas serves as our database. Other APIs we utilize include stripe to process transactions, and provide our cart functionality. 
     
-
+---
    
  ## Getting started
     
