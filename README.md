@@ -1,5 +1,5 @@
  ### Table of Contents 
- [Prerequisites](#prerequisites) | [Installation](#installation-intstructions) | [Tools](#built-with) | [Contribution](#contribution) | [Licensing](#licensing) 
+ [Prerequisites](#prerequisites) | [Installation](#installation-intstructions) | [Tools](#built-with) | [Authors](#authors) | [Contribution](#contribution) | [Licensing](#licensing) 
 
 # Better Buy 
  
@@ -37,10 +37,10 @@
 - [MaterialUI](https://mui.com/) - React component library
 -  [NPM](https://www.npmjs.com/) - Package manager
 
-## Credits
+## Authors
 * [Jorge Canto](https://github.com/jcant770)
 * [Kevin Shank](https://github.com/Bluekev22)
-* [Amir Ahmadi](https://github.com/mels065)
+* [Amir Ahmadi](https://github.com/eamahma)
 * [Matt Hendrian](https://github.com/matthendrian)
 
 ### Contribution
