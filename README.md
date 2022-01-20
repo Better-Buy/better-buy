@@ -3,7 +3,7 @@
 
   ## Project 3 - Better Buy 
   
-  ### Deployed application - https://better-buy-store.herokuapp.com/
+  ### Deployed application - https://better-buy-shop.herokuapp.com/
 
 
 ### Licensing
