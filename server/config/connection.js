@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000
 const URI = process.env.MONGODB_URI
 
 mongoose.connect(
-  URI || 'mongodb://localhost/Better-Buy',
+  URI || 'mongodb://localhost/better-buy',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
