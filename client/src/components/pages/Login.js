@@ -7,6 +7,7 @@ import Message from '../layout/Message'
 import Loader from '../layout/Loader'
 import { userLogin } from '../../actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
+import auth from '../../utils/auth'
 
 const userLoginAction = userLogin
 
@@ -24,7 +25,7 @@ function Login(history) {
     : '/'
 
   useEffect(() => {
-    if (userInfo) {
+    if (auth.loggedIn()) {
       window.location.assign(redirect)
     }
   }, [history, userInfo, redirect])

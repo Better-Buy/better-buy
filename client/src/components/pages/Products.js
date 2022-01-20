@@ -12,11 +12,8 @@ import Message from '../layout/Message'
 export default function Products() {
   const { search } = useLocation()
   const { item } = queryString.parse(search)
-  // const Price = formatProductPrice(product)
 
   const API_KEY = process.env.REACT_APP_API_KEY
-
-  // console.log(API_KEY)
 
   let catID
   switch (item) {
@@ -38,7 +35,6 @@ export default function Products() {
     default:
       catID = 'abcat0502000'
   }
-  console.log(catID)
 
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -57,10 +53,8 @@ export default function Products() {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log(result)
           setIsLoaded(true)
           setItems(result.products)
-          console.log(items)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow

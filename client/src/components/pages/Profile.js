@@ -52,7 +52,6 @@ const Profile = ({ location, history }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    console.log('het')
     if (password !== confirmPassword) {
       setMessage('Passwords do not match')
     } else {
