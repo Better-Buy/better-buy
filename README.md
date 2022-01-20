@@ -1,5 +1,5 @@
  ### Table of Contents 
- [Licensing](#licensing) | [Description](#description) | [Installation](#installation-intstructions) | [Usage](#usage) | [Contribution](#contribution) | [Tests](#test-parameters) | [Contact](#contact)
+ [Prerequisites](#prerequisites) | [Installation](#installation-intstructions) | [Built with](#built-with) | [Contribution](#contribution) | [Licensing](#licensing) 
 
 # Better Buy 
  
@@ -40,11 +40,7 @@
 ### Contribution
   Others should contribute by requesting permission to make additions or changes via our team organization. Alternatively, you can fork the repository and request to commit changes be reviewed through our organization. 
 
-### Test Parameters
-  To test this product, run npm test after installing, or by running the npm test option at the root file in package.json. You may need to create an alternative MongoDB Atlas if you intend to deploy a version of this application to a hosting service such as Heroku. 
+## License:
+This project is licensed under MIT: https://opensource.org/licenses/MIT
 
-### Contact
-  Connect with us on Github @ 
-  
-  Have any questions about our work? feel free to reach out to me at . 
  
