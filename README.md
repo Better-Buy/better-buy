@@ -8,6 +8,8 @@
   ![Better-Buy-screenshot](https://user-images.githubusercontent.com/84198162/150409462-192c9e3d-3b55-4587-9cf0-bbbde5d50e61.png)
    
  ### Live website - https://better-buy-shop.herokuapp.com/
+ 
+ This is [an example](http://example.com/ "Title") inline link.
 
     
 ---
@@ -31,7 +33,7 @@
 ### Installation Intstructions
  Clone the project repo and then navigate to the root of the project in your terminal. Enter 'npm install' to install all the required dependencies. Enter 'npm run develop' to launch the project. Keep in mind that you will need a Best Buy API key for it to function. Once you have one, create a .env file on the server side and put REACT_APP_API_KEY with the API credentials.
 
-
+### Built with
 
 ### Contribution
   Others should contribute by requesting permission to make additions or changes via our team organization. Alternatively, you can fork the repository and request to commit changes be reviewed through our organization. 
