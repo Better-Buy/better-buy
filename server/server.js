@@ -2,7 +2,10 @@
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 const path = require('path')
-require('dotenv').config()
+require('dotenv').config({
+  path: path.resolve(process.cwd(), 'client', '.env.development'),
+  debug: true,
+})
 
 //calling our resolvers.
 const { typeDefs, resolvers } = require('./schemas')
