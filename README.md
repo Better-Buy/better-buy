@@ -1,7 +1,7 @@
  ### Table of Contents 
  [Licensing](#licensing) | [Description](#description) | [Installation](#installation-intstructions) | [Usage](#usage) | [Contribution](#contribution) | [Tests](#test-parameters) | [Contact](#contact)
  
-  ![better-buy-store herokuapp com_](https://user-images.githubusercontent.com/84198162/140593514-318a6a57-b2bd-49f9-84d0-ccd3203b87da.png)
+ ![Better-Buy-screenshot](https://user-images.githubusercontent.com/84198162/150409462-192c9e3d-3b55-4587-9cf0-bbbde5d50e61.png)
 
 # Better Buy 
  
