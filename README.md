@@ -33,9 +33,9 @@
 - [React](https://reactjs.org/) - Front end framework
 - [MongoDB](https://www.mongodb.com/) - Database
 - [Express](https://expressjs.com/) - Web application framework
-- [Node](https://nodejs.org/en/) Back-end Javascript runtime environment
-- [MaterialUI](https://mui.com/) React component library
--  [NPM](https://www.npmjs.com/) Package manager
+- [Node](https://nodejs.org/en/) - Back-end Javascript runtime environment
+- [MaterialUI](https://mui.com/) - React component library
+-  [NPM](https://www.npmjs.com/) - Package manager
 
 ### Contribution
   Others should contribute by requesting permission to make additions or changes via our team organization. Alternatively, you can fork the repository and request to commit changes be reviewed through our organization. 
