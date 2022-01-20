@@ -29,15 +29,7 @@
  
 
 ### Installation Intstructions
-  Please make sure you have the following dependencies installed: 
-  
-  Mongoose,
-  Express,
-  Dotenv,
-  Axios
-  
-  To install this project, download the folder or git repo.
-  Run "npm install", "npm i" in the terminal or go to the package.json folder at the project root and select "install". 
+ Clone the project repo and then navigate to the root of the project in your terminal. Enter 'npm install' to install all the required dependencies. Enter 'npm run develop' to launch the project. Keep in mind that you will need a Best Buy API key for it to function. Once you have one, create a .env file on the server side and put REACT_APP_API_KEY with the API credentials.
 
 
 ### Usage 
