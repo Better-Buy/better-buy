@@ -13,7 +13,7 @@
     
  ### Prerequisites
     
- Follow the steps at the respective websites below to install the required programs onto your computer: Visual Studio Code, Node.js and MongoDB.
+ Follow the steps at the respective websites below to install the required programs onto your computer: **Visual Studio Code, Node.js** and **MongoDB.**
 
  https://code.visualstudio.com/download
 
@@ -23,12 +23,6 @@
 
  https://www.mongodb.com/try/download/community
 
-
-
-### Licensing
-  This project is licensed under MIT, https://opensource.org/licenses/MIT
-  
-  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so
   
 
 ![better-buy-store herokuapp com_](https://user-images.githubusercontent.com/84198162/140593514-318a6a57-b2bd-49f9-84d0-ccd3203b87da.png)
