@@ -18,7 +18,7 @@ const Shipping = () => {
     console.log('hello')
     e.preventDefault()
     dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    window.location.assign('/payment')
+    window.location.assign('/payment-method')
   }
 
   return (
