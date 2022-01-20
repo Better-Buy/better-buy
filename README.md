@@ -7,7 +7,7 @@
    
   ![Better-Buy-screenshot](https://user-images.githubusercontent.com/84198162/150409462-192c9e3d-3b55-4587-9cf0-bbbde5d50e61.png)
    
- ### Deployed application - https://better-buy-shop.herokuapp.com/
+ ### Live website - https://better-buy-shop.herokuapp.com/
 
     
 ---
