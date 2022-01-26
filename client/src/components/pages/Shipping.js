@@ -24,7 +24,7 @@ const Shipping = () => {
   return (
     <>
       <Breadcrumb step1 step2 />
-      <div className="shipping-container">
+      <div className="shipping-container" style={{ marginBottom: '2rem' }}>
         <form onSubmit={submitHandler}>
           <h1 className="profile-header">Shipping</h1>
           <div className="form-group">
