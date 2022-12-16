@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import Loader from '../layout/Loader'
-import Message from '../layout/Message'
-import ProductList from '../layout/ProductList'
-import CarouselImages from '../layout/CarouselImages'
-import { Grid } from '@mui/material'
-import './Home.css'
+import React, { useEffect, useState } from "react"
+import Loader from "../layout/Loader"
+import Message from "../layout/Message"
+import ProductList from "../layout/ProductList"
+import { Grid } from "@mui/material"
+import "./Home.css"
 
 const Home = () => {
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -15,9 +14,9 @@ const Home = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=' +
+      "https://api.bestbuy.com/v1/products/trendingViewed(categoryId=pcmcat209400050001)?apiKey=" +
         API_KEY +
-        '&pageSize=100&format=json'
+        "&pageSize=100&format=json"
     )
       .then((res) => res.json())
       .then(
@@ -33,7 +32,7 @@ const Home = () => {
           setError(error)
         }
       )
-  }, [])
+  }, [API_KEY])
 
   if (error) {
     return <Message variant="error">{error.message}</Message>

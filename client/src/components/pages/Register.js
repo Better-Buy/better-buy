@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useMutation } from '@apollo/client'
-import Auth from '../../utils/auth'
-import { ADD_USER } from '../../utils/mutations'
-import { register } from '../../actions/userActions'
-import Message from '../layout/Message'
-import Loader from '../layout/Loader'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { useMutation } from "@apollo/client"
+import Auth from "../../utils/auth"
+import { ADD_USER } from "../../utils/mutations"
+import { register } from "../../actions/userActions"
+import Message from "../layout/Message"
+import Loader from "../layout/Loader"
+import { useDispatch, useSelector } from "react-redux"
 
 function Register(history) {
   const dispatch = useDispatch()
@@ -15,8 +15,8 @@ function Register(history) {
   const { loading, error, userInfo } = userRegister
 
   const redirect = window.location.search
-    ? window.location.search.split('=')[1]
-    : '/'
+    ? window.location.search.split("=")[1]
+    : "/"
 
   useEffect(() => {
     if (userInfo) {
@@ -25,11 +25,11 @@ function Register(history) {
   }, [history, userInfo, redirect])
 
   const [formState, setFormState] = useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
-    firstName: '',
-    lastName: '',
+    email: "",
+    password: "",
+    confirmPassword: "",
+    firstName: "",
+    lastName: "",
   })
   const [message, setMessage] = useState(null)
 
@@ -45,7 +45,7 @@ function Register(history) {
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     if (formState.password !== formState.confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage("Passwords do not match")
     } else {
       const mutationResponse = await addUser({
         variables: {
@@ -138,13 +138,13 @@ function Register(history) {
           <Link
             style={{
               background:
-                '-webkit-linear-gradient(right,#FFB75A, var(--primary))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+                "-webkit-linear-gradient(right,#FFB75A, var(--primary))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
-            to={redirect ? `/login?redirect=${redirect}` : '/login'}
+            to={redirect ? `/login?redirect=${redirect}` : "/login"}
           >
-            Sign up
+            Login
           </Link>
         </p>
       </form>

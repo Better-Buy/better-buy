@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { Grid } from '@mui/material'
-import { Button } from '@mui/material'
-import './ProductItem.css'
-import { useParams } from 'react-router'
-import ProductRating from '../layout/ProductRating'
-import AlsoViewed from '../layout/AlsoViewed'
-import { useDispatch } from 'react-redux'
-import { addToCart } from '../../actions/cartActions'
-//import { useStoreContext } from '../../utils/GlobalState'
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions'
-import { idbPromise } from '../../utils/helpers'
-import { useMutation } from '@apollo/client'
-import { ADD_PRODUCT } from '../../utils/mutations'
-import { toast } from 'react-toastify'
-import Loader from '../layout/Loader'
-import Message from '../layout/Message'
+import React, { useEffect, useState } from "react"
+import { Grid } from "@mui/material"
+import { Button } from "@mui/material"
+import "./ProductItem.css"
+import { useParams } from "react-router"
+import ProductRating from "../layout/ProductRating"
+import AlsoViewed from "../layout/AlsoViewed"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../actions/cartActions"
+import { useMutation } from "@apollo/client"
+import { ADD_PRODUCT } from "../../utils/mutations"
+import Loader from "../layout/Loader"
+import Message from "../layout/Message"
 
 export default function ProductItem() {
   const { sku } = useParams()
   console.log(sku)
-  const API_KEY = process.env.REACT_APP_API_KEY
 
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -88,12 +83,13 @@ export default function ProductItem() {
   }
 */
   useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY
     fetch(
-      'https://api.bestbuy.com/v1/products((search=' +
+      "https://api.bestbuy.com/v1/products((search=" +
         sku +
-        '))?apiKey=' +
+        "))?apiKey=" +
         API_KEY +
-        '&pageSize=16&format=json'
+        "&pageSize=16&format=json"
     )
       .then((res) => res.json())
       .then(
@@ -101,8 +97,6 @@ export default function ProductItem() {
           console.log(result)
           setIsLoaded(true)
           setItems(result.products[0])
-
-          console.log(items)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -148,13 +142,13 @@ export default function ProductItem() {
               <span className="average-rating">
                 {items.customerReviewAverage
                   ? items.customerReviewAverage
-                  : 'no reviews'}
+                  : "no reviews"}
               </span>
               &nbsp;
               {items.customerReviewCount ? (
                 <span>({items.customerReviewCount}&nbsp;Reviews)</span>
               ) : (
-                ''
+                ""
               )}
             </Grid>
             <Grid item>
@@ -176,17 +170,13 @@ export default function ProductItem() {
               mb={6}
             >
               <Grid item lg={6}>
-                <img
-                  className="item-main-image"
-                  src={image}
-                  alt="main-image"
-                ></img>
+                <img className="item-main-image" src={image} alt="main"></img>
               </Grid>
               <Grid item lg={6}>
                 <img
                   className="item-alternate-image"
                   src={items.alternateViewsImage}
-                  alt="main-image"
+                  alt="main"
                 ></img>
               </Grid>
             </Grid>
@@ -219,9 +209,9 @@ export default function ProductItem() {
                   variant="contained"
                   size="large"
                   style={{
-                    backgroundColor: '#FFB75A',
-                    color: '#0b3278',
-                    fontFamily: 'now bold',
+                    backgroundColor: "#FFB75A",
+                    color: "#0b3278",
+                    fontFamily: "now bold",
                   }}
                   className="add-item-buttom"
                   onClick={addItem}

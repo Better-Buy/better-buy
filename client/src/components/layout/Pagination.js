@@ -1,5 +1,5 @@
-import React from 'react'
-import { Grid } from '@mui/material'
+import React from "react"
+import { Grid } from "@mui/material"
 
 const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
   const pageNumbers = []
@@ -16,24 +16,26 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
       alignItems="center"
       className="pagination"
       style={{
-        marginTop: '2vh',
-        marginBottom: '15vh',
+        marginTop: "2vh",
+        marginBottom: "15vh",
       }}
     >
       {pageNumbers.map((number) => (
         <Grid item key={number} className="page-item">
-          <a
+          <button
             className="page-link"
             onClick={() => paginate(number)}
-            href="#"
             style={{
-              margin: '1rem',
-              color: 'var(--primary)',
-              fontSize: '19.20px',
+              margin: "1rem",
+              color: "var(--primary)",
+              fontSize: "19.20px",
+              border: "none",
+              background: "none",
+              cursor: "pointer",
             }}
           >
             {number}
-          </a>
+          </button>
         </Grid>
       ))}
     </Grid>

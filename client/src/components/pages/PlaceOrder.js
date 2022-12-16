@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { Grid, Button } from '@mui/material'
-import Breadcrumb from '../layout/Breadcrumb'
-import Message from '../layout/Message'
+import React from "react"
+import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { Grid, Button } from "@mui/material"
+import Breadcrumb from "../layout/Breadcrumb"
+import Message from "../layout/Message"
 
 const PlaceOrder = () => {
   const cart = useSelector((state) => state.cart)
@@ -25,7 +25,7 @@ const PlaceOrder = () => {
   ).toFixed(2)
 
   const placeOrderHandler = () => {
-    console.log('order')
+    console.log("order")
   }
   return (
     <>
@@ -47,28 +47,28 @@ const PlaceOrder = () => {
           alignItems="flex-start"
         >
           <Grid item pt={4}>
-            <h2 style={{ color: 'var(--primary)' }}>Shipping</h2>
+            <h2 style={{ color: "var(--primary)" }}>Shipping</h2>
           </Grid>
           <Grid item>
             <p>
-              <span style={{ fontSize: '18px' }}>Address: </span>
-              {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
+              <span style={{ fontSize: "18px" }}>Address: </span>
+              {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
               {cart.shippingAddress.postalCode}, {cart.shippingAddress.country}
             </p>
           </Grid>
 
           <Grid item pt={4}>
-            <h2 style={{ color: 'var(--primary)' }}>Payment Method</h2>
+            <h2 style={{ color: "var(--primary)" }}>Payment Method</h2>
           </Grid>
           <Grid item>
             <p>
-              <span style={{ fontSize: '18px' }}>Method: </span>
+              <span style={{ fontSize: "18px" }}>Method: </span>
               {cart.paymentMethod}
             </p>
           </Grid>
 
           <Grid container item pt={4}>
-            <h2 style={{ color: 'var(--primary)' }}>Order Items</h2>
+            <h2 style={{ color: "var(--primary)" }}>Order Items</h2>
             {cart.cartItems.length === 0 ? (
               <Message>Your cart is empty</Message>
             ) : (
@@ -83,11 +83,11 @@ const PlaceOrder = () => {
                     alignItems="center"
                   >
                     <Grid item lg={1} m={1} ml={3}>
-                      {' '}
+                      {" "}
                       <img
                         src={item.image}
                         alt={item.name}
-                        style={{ maxHeight: '10vh' }}
+                        style={{ maxHeight: "10vh" }}
                       />
                     </Grid>
                     <Grid
@@ -101,7 +101,7 @@ const PlaceOrder = () => {
                       <Grid item>
                         <Link
                           to={`/products/${item.sku}`}
-                          style={{ fontSize: '12px', color: 'black' }}
+                          style={{ fontSize: "12px", color: "black" }}
                         >
                           {item.name}
                         </Link>
@@ -128,7 +128,7 @@ const PlaceOrder = () => {
           alignItems="flex-start"
         >
           <Grid item pt={4}>
-            <h2 style={{ color: 'var(--primary)' }}>Order Summary</h2>
+            <h2 style={{ color: "var(--primary)" }}>Order Summary</h2>
           </Grid>
           <Grid
             container
@@ -187,7 +187,7 @@ const PlaceOrder = () => {
               item
               lg={4}
               pt={1}
-              style={{ borderTop: '2px solid var(--primary)' }}
+              style={{ borderTop: "2px solid var(--primary)" }}
             >
               Total
             </Grid>
@@ -195,7 +195,7 @@ const PlaceOrder = () => {
               item
               lg={3}
               pt={1}
-              style={{ borderTop: '2px solid var(--primary)' }}
+              style={{ borderTop: "2px solid var(--primary)" }}
             >
               ${cart.totalPrice}
             </Grid>
@@ -205,11 +205,11 @@ const PlaceOrder = () => {
             size="large"
             disabled={cart.cartItems.length === 0}
             style={{
-              backgroundColor: '#FFB75A',
-              color: '#0b3278',
-              fontFamily: 'now bold',
-              marginTop: '2.5vh',
-              width: '57.5%',
+              backgroundColor: "#FFB75A",
+              color: "#0b3278",
+              fontFamily: "now bold",
+              marginTop: "2.5vh",
+              width: "57.5%",
             }}
             onClick={() => placeOrderHandler()}
           >
@@ -218,7 +218,7 @@ const PlaceOrder = () => {
         </Grid>
       </Grid>
       {cart.cartItems.length > 4 ? (
-        <div style={{ marginBottom: '10vh' }}></div>
+        <div style={{ marginBottom: "10vh" }}></div>
       ) : null}
     </>
   )
