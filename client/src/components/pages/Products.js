@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Grid } from '@mui/material'
-import { useLocation } from 'react-router-dom'
-import queryString from 'query-string'
-import './Products.css'
-import ProductList from '../layout/ProductList'
-import Pagination from '../layout/Pagination'
-import Loader from '../layout/Loader'
-import Message from '../layout/Message'
+import React, { useState, useEffect } from "react"
+import { Grid } from "@mui/material"
+import { useLocation } from "react-router-dom"
+import queryString from "query-string"
+import "./Products.css"
+import ProductList from "../layout/ProductList"
+import Pagination from "../layout/Pagination"
+import Loader from "../layout/Loader"
+import Message from "../layout/Message"
 // import formatProductPrice from "../../utils/Productprice"
 
 export default function Products() {
@@ -17,23 +17,23 @@ export default function Products() {
 
   let catID
   switch (item) {
-    case 'Laptops':
-      catID = 'abcat0502000'
+    case "Laptops":
+      catID = "abcat0502000"
       break
-    case 'Cameras':
-      catID = 'abcat0401000'
+    case "Cameras":
+      catID = "abcat0401000"
       break
-    case 'TVs':
-      catID = 'abcat0101000'
+    case "TVs":
+      catID = "abcat0101000"
       break
-    case 'Speakers':
-      catID = 'pcmcat310200050004'
+    case "Speakers":
+      catID = "pcmcat310200050004"
       break
-    case 'Desktops':
-      catID = 'abcat0501000'
+    case "Desktops":
+      catID = "abcat0501000"
       break
     default:
-      catID = 'abcat0502000'
+      catID = "abcat0502000"
   }
 
   const [error, setError] = useState(null)
@@ -44,11 +44,11 @@ export default function Products() {
 
   useEffect(() => {
     fetch(
-      'https://api.bestbuy.com/v1/products((categoryPath.id=' +
+      "https://api.bestbuy.com/v1/products((categoryPath.id=" +
         catID +
-        '))?apiKey=' +
+        "))?apiKey=" +
         API_KEY +
-        '&pageSize=90&format=json'
+        "&pageSize=90&format=json"
     )
       .then((res) => res.json())
       .then(
@@ -64,7 +64,7 @@ export default function Products() {
           setError(error)
         }
       )
-  }, [item])
+  }, [item, catID, API_KEY])
 
   //Get current items
   const indexOfLastItem = currentPage * itemsPerPage

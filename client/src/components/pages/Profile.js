@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import './Profile.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { useQuery, useMutation } from '@apollo/client'
-import Message from '../layout/Message'
-import Loader from '../layout/Loader'
-import { Grid } from '@mui/material'
-import { getUserDetails, updateUserProfile } from '../../actions/userActions'
-import { GET_USER } from '../../utils/queries'
-import { UPDATE_USER } from '../../utils/mutations'
-import { USER_UPDATE_PROFILE_RESET } from '../../constants/userConstants'
+import React, { useState, useEffect } from "react"
+import "./Profile.css"
+import { useDispatch, useSelector } from "react-redux"
+import { useQuery, useMutation } from "@apollo/client"
+import Message from "../layout/Message"
+import Loader from "../layout/Loader"
+import { Grid } from "@mui/material"
+import { getUserDetails, updateUserProfile } from "../../actions/userActions"
+import { GET_USER } from "../../utils/queries"
+import { UPDATE_USER } from "../../utils/mutations"
+import { USER_UPDATE_PROFILE_RESET } from "../../constants/userConstants"
 
 const Profile = ({ location, history }) => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [message, setMessage] = useState(null)
-  const { loading: queryLoading, data, error: queryError } = useQuery(GET_USER)
-  const [updateUser, { error: mutationError }] = useMutation(UPDATE_USER)
+  const { data } = useQuery(GET_USER)
+  const [updateUser] = useMutation(UPDATE_USER)
 
   const dispatch = useDispatch()
 
@@ -33,7 +33,7 @@ const Profile = ({ location, history }) => {
 
   useEffect(() => {
     if (!userInfo) {
-      window.location.assign('/login')
+      window.location.assign("/login")
     } else {
       if (!user || !user.firstName || success) {
         try {
@@ -48,12 +48,12 @@ const Profile = ({ location, history }) => {
         setEmail(user.email)
       }
     }
-  }, [dispatch, history, userInfo, user, success, userInfo])
+  }, [dispatch, history, userInfo, user, success, data])
 
   const submitHandler = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
-      setMessage('Passwords do not match')
+      setMessage("Passwords do not match")
     } else {
       try {
         const mutationResponse = await updateUser({

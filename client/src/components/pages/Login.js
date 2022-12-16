@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { useMutation } from '@apollo/client'
-import { LOGIN } from '../../utils/mutations'
-import Auth from '../../utils/auth'
-import Message from '../layout/Message'
-import Loader from '../layout/Loader'
-import { userLogin } from '../../actions/userActions'
-import { useDispatch, useSelector } from 'react-redux'
-import auth from '../../utils/auth'
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import { useMutation } from "@apollo/client"
+import { LOGIN } from "../../utils/mutations"
+import Auth from "../../utils/auth"
+import Message from "../layout/Message"
+import Loader from "../layout/Loader"
+import { userLogin } from "../../actions/userActions"
+import { useDispatch, useSelector } from "react-redux"
+import auth from "../../utils/auth"
 
 const userLoginAction = userLogin
 
 function Login(history) {
-  const [formState, setFormState] = useState({ email: '', password: '' })
+  const [formState, setFormState] = useState({ email: "", password: "" })
   const [login, { error }] = useMutation(LOGIN)
 
   const dispatch = useDispatch()
@@ -21,8 +21,8 @@ function Login(history) {
   const { loading, userInfo } = userLogin
 
   const redirect = window.location.search
-    ? window.location.search.split('=')[1]
-    : '/'
+    ? window.location.search.split("=")[1]
+    : "/"
 
   useEffect(() => {
     if (auth.loggedIn()) {
@@ -92,11 +92,11 @@ function Login(history) {
           <Link
             style={{
               background:
-                '-webkit-linear-gradient(right,#FFB75A, var(--primary))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+                "-webkit-linear-gradient(right,#FFB75A, var(--primary))",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             }}
-            to={redirect ? `/register?redirect=${redirect}` : '/register'}
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
           >
             Register
           </Link>

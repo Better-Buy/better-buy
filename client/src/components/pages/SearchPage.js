@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import ProductList from '../layout/ProductList'
-import { Grid } from '@mui/material'
-import { useStoreContext } from '../../utils/GlobalState'
-import { useLocation } from 'react-router-dom'
-import queryString from 'query-string'
-import SearchBox from '../layout/SearchBox'
-import Pagination from '../layout/Pagination'
-import Loader from '../layout/Loader'
-import Message from '../layout/Message'
+import React, { useEffect, useState } from "react"
+import ProductList from "../layout/ProductList"
+import { Grid } from "@mui/material"
+import { useLocation } from "react-router-dom"
+import queryString from "query-string"
+import SearchBox from "../layout/SearchBox"
+import Pagination from "../layout/Pagination"
+import Loader from "../layout/Loader"
+import Message from "../layout/Message"
 
 export default function SearchPage() {
   const { search } = useLocation()
   const { searchField } = queryString.parse(search)
   console.log(searchField)
-
-  const API_KEY = process.env.REACT_APP_API_KEY
 
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -23,12 +20,13 @@ export default function SearchPage() {
   const [itemsPerPage] = useState(9)
 
   useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY
     fetch(
-      'https://api.bestbuy.com/v1/products((search=' +
+      "https://api.bestbuy.com/v1/products((search=" +
         searchField +
-        '))?apiKey=' +
+        "))?apiKey=" +
         API_KEY +
-        '&pageSize=90&format=json'
+        "&pageSize=90&format=json"
     )
       .then((res) => res.json())
       .then(
@@ -36,7 +34,6 @@ export default function SearchPage() {
           console.log(result)
           setIsLoaded(true)
           setItems(result.products)
-          console.log(items)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow

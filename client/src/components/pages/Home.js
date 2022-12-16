@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import Loader from "../layout/Loader"
 import Message from "../layout/Message"
 import ProductList from "../layout/ProductList"
-import CarouselImages from "../layout/CarouselImages"
 import { Grid } from "@mui/material"
 import "./Home.css"
 
@@ -33,7 +32,7 @@ const Home = () => {
           setError(error)
         }
       )
-  }, [])
+  }, [API_KEY])
 
   if (error) {
     return <Message variant="error">{error.message}</Message>

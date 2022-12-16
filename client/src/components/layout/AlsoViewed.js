@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
-import { Grid } from '@mui/material'
-import AlsoViewedProductList from './AlsoViewedProductList'
-import Loader from '../layout/Loader'
-import Message from '../layout/Message'
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import { Grid } from "@mui/material"
+import AlsoViewedProductList from "./AlsoViewedProductList"
+import Loader from "../layout/Loader"
+import Message from "../layout/Message"
 
 export default function AlsoViewed(props) {
   const { sku } = useParams()
-  const API_KEY = process.env.REACT_APP_API_KEY
 
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -36,10 +35,11 @@ export default function AlsoViewed(props) {
   const [count3, setCount3] = useState([])
 
   useEffect(() => {
+    const API_KEY = process.env.REACT_APP_API_KEY
     fetch(
-      'https://api.bestbuy.com/v1/products/' +
+      "https://api.bestbuy.com/v1/products/" +
         sku +
-        '/alsoViewed?apiKey=' +
+        "/alsoViewed?apiKey=" +
         API_KEY
     )
       .then((res) => res.json())
@@ -94,7 +94,7 @@ export default function AlsoViewed(props) {
     return (
       <div
         style={{
-          marginBottom: '8vh',
+          marginBottom: "8vh",
         }}
       >
         <p className="also-viewed">Customers Also Viewed</p>
